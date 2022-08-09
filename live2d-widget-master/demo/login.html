@@ -1,0 +1,311 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="description" content="看板娘登陆平台     html, body { 	height: 100%; } body { 	display: flex; 	align-items: center; 	justify-content: center; 	padding-top: 40px; 	padding-bottom: 40px; 	background-color: #f5f5f5; } .form-sig">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fomalhaut">
+<meta property="og:url" content="https://fomalhaut1998.github.io/live2d-widget-master/demo/login.html">
+<meta property="og:site_name" content="Fomalhaut">
+<meta property="og:description" content="看板娘登陆平台     html, body { 	height: 100%; } body { 	display: flex; 	align-items: center; 	justify-content: center; 	padding-top: 40px; 	padding-bottom: 40px; 	background-color: #f5f5f5; } .form-sig">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fomalhaut1998.github.io/live2d-widget-master/assets/screenshot-1.png">
+<meta property="article:published_time" content="2022-08-09T13:30:42.467Z">
+<meta property="article:modified_time" content="2022-08-01T07:43:43.000Z">
+<meta property="article:author" content="Fomalhaut🥝">
+<meta property="article:tag" content="Java,MySQL,Algorithm">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fomalhaut1998.github.io/live2d-widget-master/assets/screenshot-1.png"><title> | Fomalhaut</title><link ref="canonical" href="https://fomalhaut1998.github.io/live2d-widget-master/demo/login.html"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.2.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Fomalhaut</div><div class="header-banner-info__subtitle">FomalhautのTiny Site</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><div class="custompage"><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>看板娘登陆平台</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+<script src="../live2d.min.js"></script>
+<style>
+html, body {
+	height: 100%;
+}
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: #f5f5f5;
+}
+.form-signin {
+	width: 100%;
+	max-width: 330px;
+	padding: 15px;
+	margin: 0 auto;
+}
+.form-signin .checkbox {
+	font-weight: 400;
+}
+.form-signin .form-control {
+	position: relative;
+	box-sizing: border-box;
+	height: auto;
+	padding: 10px;
+	font-size: 16px;
+}
+.form-signin .form-control:focus {
+	z-index: 2;
+}
+.form-signin input[type=text] {
+	margin-bottom: -1px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+.form-signin input[type=password] {
+	margin-bottom: 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+#stage {
+	position: relative;
+}
+#stage img {
+	width: 100%;
+	margin-bottom: 20px;
+	border-radius: 20px;
+}
+#stage button {
+	position: absolute;
+	width: 2em;
+	height: 2em;
+	border-radius: 50%;
+}
+#inner {
+	position: relative;
+	background-color: #999;
+	clip-path: circle(120px at center);
+}
+#cover {
+	position: absolute;
+	background-color: #CB3837;
+	width: 100%;
+	height: 100%;
+	bottom: 10%;
+	transition: all 1s;
+	box-shadow: 0 0 0 5px rgba(0, 0, 0, .1);
+}
+#text {
+	position: absolute;
+	bottom: 30%;
+	font-size: 2em;
+	left: 50%;
+	transform: translateX(-50%);
+	opacity: 0.4;
+	font-weight: bold;
+}
+#detail {
+	position: absolute;
+	background: rgba(255, 255, 255, .1);
+	width: 100%;
+	height: 10px;
+	bottom: 0;
+}
+#handle {
+	position: absolute;
+	background: #ccc;
+	bottom: -2px;
+	box-shadow: 0 1px 0 1px rgba(0, 0, 0, .1);
+	height: 8px;
+	left: 50%;
+	margin-left: -15px;
+	width: 30px;
+	cursor: pointer;
+}
+#info {
+	left: 40px;
+	bottom: 20px;
+}
+#refresh {
+	right: 40px;
+	bottom: 20px;
+}
+#live2d {
+	cursor: grab;
+	height: 300px;
+	width: 300px;
+}
+#live2d:active {
+	cursor: grabbing;
+}
+</style>
+</head>
+<body class="text-center">
+<form class="form-signin" action="login.php" method="post">
+	<div id="stage">
+		<div id="inner">
+			<div id="cover">
+				<div id="text">
+					<span style="color: cyan;">MIMI</span><span style="color: white;">POWERED</span>
+				</div>
+				<div id="detail"></div>
+				<div id="handle"></div>
+			</div>
+			<canvas class="mb-4" id="live2d" width="800" height="800"></canvas>
+		</div>
+		<button class="btn btn-link" id="info"><i class="fa fa-lg fa-info"></i></button>
+		<button class="btn btn-link" id="refresh"><i class="fa fa-lg fa-sync-alt"></i></button>
+	</div>
+	<h1 class="h3 mb-3 fw-normal">看板娘登陆平台</h1>
+	<label for="room" class="sr-only">用户名</label>
+	<input type="text" name="room" class="form-control" placeholder="用户名" required autofocus>
+	<label for="pass" class="sr-only">密码</label>
+	<input type="password" name="pass" class="form-control" placeholder="密码" required>
+	<div class="checkbox mb-4">
+		<label>
+			<input type="checkbox" value="remember-me"> 记住我
+		</label>
+	</div>
+	<div class="d-grid">
+		<button class="btn btn-lg btn-primary" type="submit">登录</button>
+	</div>
+	<p class="mt-5 mb-3 text-muted">Copyleft &copy; Mimi 2019</p>
+</form>
+<script>
+/*
+ * _(:з」∠)_
+ * Created by Shuqiao Zhang in 2019.
+ * https://zhangshuqiao.org
+ */
+
+/*
+ * This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ */
+window.addEventListener("load", () => {
+	"use strict";
+
+	if (!CSS.supports("clip-path", "circle(120px at center)")) {
+		document.getElementById("stage").innerHTML = '<img src="../assets/screenshot-1.png">';
+		return;
+	}
+
+	const apiPath = "https://live2d.fghrsh.net/api";
+	let state = 0, loading = false,
+		modelId = localStorage.getItem("modelId"),
+		modelTexturesId = localStorage.getItem("modelTexturesId");
+	if (modelId === null) {
+		modelId = 1;
+		modelTexturesId = 53;
+	}
+	loadModel(modelId, modelTexturesId);
+
+	function loadModel(modelId, modelTexturesId) {
+		localStorage.setItem("modelId", modelId);
+		if (modelTexturesId === undefined) modelTexturesId = 0;
+		localStorage.setItem("modelTexturesId", modelTexturesId);
+		loadlive2d("live2d", `${apiPath}/get/?id=${modelId}-${modelTexturesId}`, null);
+		console.log("live2d", `模型 ${modelId}-${modelTexturesId} 加载完成`);
+		setTimeout(() => {
+			coverPosition("80%");
+			state = 2;
+		}, 2000);
+	}
+
+	function loadRandModel() {
+		const modelId = localStorage.getItem("modelId"),
+			modelTexturesId = localStorage.getItem("modelTexturesId");
+		fetch(`${apiPath}/rand_textures/?id=${modelId}-${modelTexturesId}`)
+			.then(response => response.json())
+			.then(result => {
+				loadModel(modelId, result.textures.id);
+				setTimeout(() => {
+					state = 2;
+					coverPosition("80%");
+					loading = false;
+				}, 1000);
+			});
+	}
+
+	function loadOtherModel() {
+		const modelId = localStorage.getItem("modelId");
+		fetch(`${apiPath}/switch/?id=${modelId}`)
+			.then(response => response.json())
+			.then(result => {
+				loadModel(result.model.id);
+			});
+	}
+
+	function coverPosition(pos) {
+		document.getElementById("cover").style.bottom = pos;
+	}
+
+	document.getElementById("info").addEventListener("click", () => {
+		fetch("https://v1.hitokoto.cn")
+			.then(response => response.json())
+			.then(result => {
+				alert("「" + result.hitokoto + "」——" + result.from);
+			});
+	});
+
+	document.getElementById("refresh").addEventListener("click", () => {
+		if (loading) return;
+		state = 0;
+		coverPosition("10%");
+		loading = true;
+		setTimeout(loadRandModel, 1000);
+	});
+
+	document.getElementById("handle").addEventListener("click", () => {
+		if (state === 1) {
+			state = 2;
+			coverPosition("80%");
+		}
+		else if (state === 2) {
+			state = 1;
+			coverPosition("20%");
+		}
+	});
+
+	document.querySelector("input[type=password]").addEventListener("focus", () => {
+		if (state === 2) {
+			state = 1;
+			coverPosition("20%");
+		}
+	});
+	document.querySelector("input[type=password]").addEventListener("blur", () => {
+		if (state === 1) {
+			state = 2;
+			coverPosition("80%");
+		}
+	});
+});
+</script>
+</body>
+</html>
+</div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">看板娘登陆平台</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/assets/head.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">Future is now.</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">2</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">2</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">2</div><div class="sidebar-ov-state-item__name">标签</div></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Fomalhaut🥝</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
