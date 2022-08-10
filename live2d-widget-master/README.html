@@ -1,113 +1,192 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="description" content="Live2D Widget 自用二改版                           特性 Feature        在网页中添加 Live2D 看板娘。兼容 PJAX，支持无刷新加载。 Add Live2D widget to web page. Compatible with PJAX. 警告：本项目使用了大量 ES6 语法，不支持 IE 11 等老旧浏览器。 WARNING: Th">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Fomalhaut🥝のTiny Home | Fomalhaut🥝のTiny Home</title><meta name="keywords" content="Java,MySQL,Algorithm"><meta name="author" content="Fomalhaut🥝"><meta name="copyright" content="Fomalhaut🥝"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="Live2D Widget 自用二改版       特性 Feature 在网页中添加 Live2D 看板娘。兼容 PJAX，支持无刷新加载。 Add Live2D widget to web page. Compatible with PJAX. 警告：本项目使用了大量 ES6 语法，不支持 IE 11 等老旧浏览器。 WARNING: This project does not support">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Fomalhaut">
+<meta property="og:title" content="Fomalhaut🥝のTiny Home">
 <meta property="og:url" content="https://fomalhaut1998.github.io/live2d-widget-master/README.html">
-<meta property="og:site_name" content="Fomalhaut">
-<meta property="og:description" content="Live2D Widget 自用二改版                           特性 Feature        在网页中添加 Live2D 看板娘。兼容 PJAX，支持无刷新加载。 Add Live2D widget to web page. Compatible with PJAX. 警告：本项目使用了大量 ES6 语法，不支持 IE 11 等老旧浏览器。 WARNING: Th">
+<meta property="og:site_name" content="Fomalhaut🥝のTiny Home">
+<meta property="og:description" content="Live2D Widget 自用二改版       特性 Feature 在网页中添加 Live2D 看板娘。兼容 PJAX，支持无刷新加载。 Add Live2D widget to web page. Compatible with PJAX. 警告：本项目使用了大量 ES6 语法，不支持 IE 11 等老旧浏览器。 WARNING: This project does not support">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://forthebadge.com/images/badges/built-with-love.svg">
-<meta property="og:image" content="https://forthebadge.com/images/badges/uses-html.svg">
-<meta property="og:image" content="https://forthebadge.com/images/badges/made-with-javascript.svg">
-<meta property="og:image" content="https://forthebadge.com/images/badges/contains-cat-gifs.svg">
-<meta property="og:image" content="https://forthebadge.com/images/badges/powered-by-electricity.svg">
-<meta property="og:image" content="https://forthebadge.com/images/badges/makes-people-smile.svg">
-<meta property="og:image" content="https://fomalhaut1998.github.io/live2d-widget-master/assets/screenshot-2.png">
-<meta property="og:image" content="https://fomalhaut1998.github.io/live2d-widget-master/assets/screenshot-3.png">
-<meta property="og:image" content="https://fomalhaut1998.github.io/live2d-widget-master/assets/screenshot-1.png">
-<meta property="og:image" content="https://live.browserstack.com/images/opensource/browserstack-logo.svg">
-<meta property="og:image" content="https://raw.githubusercontent.com/jsdelivr/jsdelivr-media/master/default/svg/jsdelivr-logo-horizontal.svg">
+<meta property="og:image" content="https://fomalhaut1998.github.io/assets/p2.jpg">
 <meta property="article:published_time" content="2022-08-09T13:30:42.457Z">
 <meta property="article:modified_time" content="2022-08-01T07:43:43.000Z">
 <meta property="article:author" content="Fomalhaut🥝">
 <meta property="article:tag" content="Java,MySQL,Algorithm">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://forthebadge.com/images/badges/built-with-love.svg"><title> | Fomalhaut</title><link ref="canonical" href="https://fomalhaut1998.github.io/live2d-widget-master/README.html"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
-var CONFIG = {
+<meta name="twitter:image" content="https://fomalhaut1998.github.io/assets/p2.jpg"><link rel="shortcut icon" href="/assets/%E5%92%96%E5%95%A1.png"><link rel="canonical" href="https://fomalhaut1998.github.io/live2d-widget-master/README"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
-  assistSearch: undefined,
-  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
-  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
-  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
-  postWidget: {"endText":true},
-  nightMode: {"enable":true},
-  back2top: {"enable":true},
-  codeblock: {"style":"default","highlight":"light","wordWrap":false},
-  reward: false,
-  fancybox: false,
-  zoomImage: {"gapAside":"20px"},
-  galleryWaterfall: undefined,
-  lazyload: false,
-  pjax: undefined,
-  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
-  shortcuts: undefined,
-  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
-  sourcePath: {"js":"js","css":"css","images":"images"},
-};
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Fomalhaut🥝のTiny Home',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-08-01 15:43:43'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.2.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Fomalhaut</div><div class="header-banner-info__subtitle">FomalhautのTiny Site</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><div class="custompage"><h1>Live2D Widget 自用二改版</h1>
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/assets/head.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/List/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/List/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/List/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url('/assets/p2.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Fomalhaut🥝のTiny Home</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/List/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/List/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/List/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">Fomalhaut🥝のTiny Home</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><h1>Live2D Widget 自用二改版</h1>
 <p><img src="https://forthebadge.com/images/badges/built-with-love.svg" alt=""><br>
 <img src="https://forthebadge.com/images/badges/uses-html.svg" alt=""><br>
 <img src="https://forthebadge.com/images/badges/made-with-javascript.svg" alt=""><br>
 <img src="https://forthebadge.com/images/badges/contains-cat-gifs.svg" alt=""><br>
 <img src="https://forthebadge.com/images/badges/powered-by-electricity.svg" alt=""><br>
 <img src="https://forthebadge.com/images/badges/makes-people-smile.svg" alt=""></p>
-
-        <h2 id="特性-Feature"   >
-          <a href="#特性-Feature" class="heading-link"><i class="fas fa-link"></i></a>特性 Feature</h2>
-      
+<h2 id="特性-Feature">特性 Feature</h2>
 <p>在网页中添加 Live2D 看板娘。兼容 PJAX，支持无刷新加载。<br>
 Add Live2D widget to web page. Compatible with PJAX.</p>
 <p><strong>警告：本项目使用了大量 ES6 语法，不支持 IE 11 等老旧浏览器。</strong><br>
 <strong>WARNING: This project does not support legacy browsers such as IE 11.</strong></p>
-
-        <h2 id="示例-Demo"   >
-          <a href="#示例-Demo" class="heading-link"><i class="fas fa-link"></i></a>示例 Demo</h2>
-      
-<p>在<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://zhangshuqiao.org" >米米的博客</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>的左下角可查看效果。（注：以下人物模型仅供展示之用，本仓库并不包含任何模型。）</p>
+<h2 id="示例-Demo">示例 Demo</h2>
+<p>在<a target="_blank" rel="noopener" href="https://zhangshuqiao.org">米米的博客</a>的左下角可查看效果。（注：以下人物模型仅供展示之用，本仓库并不包含任何模型。）</p>
 <p><img src="assets/screenshot-2.png" width="280"><img src="assets/screenshot-3.png" width="280"><img src="assets/screenshot-1.png" width="270"></p>
 <p>你也可以在允许的范围内进行二次开发，这里有一些示例</p>
 <ul>
-<li><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://mi.js.org/live2d-widget/demo/demo.html" >demo.html</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> ，展现基础效果</li>
-<li><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://mi.js.org/live2d-widget/demo/login.html" >login.html</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> ，仿 NPM 的登陆界面</li>
+<li><a target="_blank" rel="noopener" href="https://mi.js.org/live2d-widget/demo/demo.html">demo.html</a> ，展现基础效果</li>
+<li><a target="_blank" rel="noopener" href="https://mi.js.org/live2d-widget/demo/login.html">login.html</a> ，仿 NPM 的登陆界面</li>
 </ul>
-
-        <h2 id="依赖-Dependencies"   >
-          <a href="#依赖-Dependencies" class="heading-link"><i class="fas fa-link"></i></a>依赖 Dependencies</h2>
-      
+<h2 id="依赖-Dependencies">依赖 Dependencies</h2>
 <p>本插件需要 Font Awesome (v4 或 v5) 图标支持，请确保相关样式表已在页面中加载。以 Font Awesome v4 为例，请在 <code>&lt;head&gt;</code> 中加入：<br>
 Font Awesome (v4 or v5) is required for this plugin. Take Font Awesome v4 as an example, please add the following in <code>&lt;head&gt;</code>:</p>
-<figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>否则图标将无法正常显示。（如果网页中已经加载了任何版本的 Font Awesome，就不要重复加载了）</p>
-
-        <h2 id="使用-Usage"   >
-          <a href="#使用-Usage" class="heading-link"><i class="fas fa-link"></i></a>使用 Usage</h2>
-      
+<h2 id="使用-Usage">使用 Usage</h2>
 <p>将这一行代码加入 <code>&lt;head&gt;</code> 或 <code>&lt;body&gt;</code>，即可展现出效果：</p>
-<figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>如果网站启用了 PJAX，由于看板娘不必每页刷新，因此要注意将相关脚本放到 PJAX 刷新区域之外。</p>
 <p>换句话说，如果你是小白，或者只需要最基础的功能，就只用把这一行代码，连同前面加载 Font Awesome 的一行代码，一起放到 html 的 <code>&lt;head&gt;</code> 中即可。<br>
-对于用各种模版引擎（例如 Nunjucks，Jinja 或者 PHP）生成的页面，也要自行修改，方法类似，只是可能略为麻烦。以 <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io" >Hexo</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> 为例，需要在主题相关的 ejs 或 njk 模版中正确配置路径，才可以加载。</p>
+对于用各种模版引擎（例如 Nunjucks，Jinja 或者 PHP）生成的页面，也要自行修改，方法类似，只是可能略为麻烦。以 <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> 为例，需要在主题相关的 ejs 或 njk 模版中正确配置路径，才可以加载。</p>
 <p><strong>但是！我们强烈推荐自己进行配置，否则很多功能是不完整的，并且可能产生问题！</strong><br>
 如果你有兴趣自己折腾的话，请看下面的详细说明。</p>
-
-        <h3 id="Using-CDN"   >
-          <a href="#Using-CDN" class="heading-link"><i class="fas fa-link"></i></a>Using CDN</h3>
-      
+<h3 id="Using-CDN">Using CDN</h3>
 <p>要自定义有关内容，可以把这个仓库 Fork 一份，然后进行修改。这时，使用方法对应地变为</p>
-<figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/gh/username/live2d-widget@latest/autoload.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/gh/username/live2d-widget@latest/autoload.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>将此处的 <code>username</code> 替换为你的 GitHub 用户名。为了使 CDN 的内容正常刷新，需要创建新的 git tag 并推送至 GitHub 仓库中，否则此处的 <code>@latest</code> 仍然指向更新前的文件。此外 CDN 本身存在缓存，因此改动可能需要一定的时间生效。相关文档：</p>
 <ul>
-<li><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://git-scm.com/book/en/v2/Git-Basics-Tagging" >Git Basics - Tagging</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></li>
-<li><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://help.github.com/en/github/administering-a-repository/managing-releases-in-a-repository" >Managing releases in a repository</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></li>
+<li><a target="_blank" rel="noopener" href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">Git Basics - Tagging</a></li>
+<li><a target="_blank" rel="noopener" href="https://help.github.com/en/github/administering-a-repository/managing-releases-in-a-repository">Managing releases in a repository</a></li>
 </ul>
-
-        <h3 id="Self-host"   >
-          <a href="#Self-host" class="heading-link"><i class="fas fa-link"></i></a>Self-host</h3>
-      
+<h3 id="Self-host">Self-host</h3>
 <p>你也可以直接把这些文件放到服务器上，而不是通过 CDN 加载。</p>
 <ul>
-<li>如果你能够通过 <code>ssh</code> 访问你的主机，请把整个仓库克隆到服务器上。执行：<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /path/to/your/webroot</span><br><span class="line"><span class="comment"># Clone this repository</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/stevenjoezhang/live2d-widget.git</span><br></pre></td></tr></table></div></figure>
+<li>如果你能够通过 <code>ssh</code> 访问你的主机，请把整个仓库克隆到服务器上。执行：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /path/to/your/webroot</span><br><span class="line"><span class="comment"># Clone this repository</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/stevenjoezhang/live2d-widget.git</span><br></pre></td></tr></table></figure>
 </li>
 <li>如果你的主机无法用 <code>ssh</code> 连接（例如一般的虚拟主机），请选择 <code>Download ZIP</code>，然后通过 <code>ftp</code> 等方式上传到主机上，再解压到网站的目录下。</li>
 <li>如果你是通过 Hexo 等工具部署的静态博客，请在博客源文件（即 <code>source</code>）目录下，执行前述的 <code>git clone</code> 命令。重新部署博客时，相关文件就会自动上传到对应的路径下。为了避免这些文件被 Hexo 插件错误地修改，可能需要设置 <code>skip_render</code>。</li>
@@ -115,38 +194,29 @@ Font Awesome (v4 or v5) is required for this plugin. Take Font Awesome v4 as an 
 <p>这样，整个项目就可以通过你的服务器 IP 或者域名从公网访问了。不妨试试能否正常地通过浏览器打开 <code>autoload.js</code> 和 <code>live2d.min.js</code> 等文件，并确认这些文件的内容是完整和正确的。<br>
 一切正常的话，接下来修改一些配置就行了。（需要通过服务器上的文本编辑器修改；你也可以先在本地完成这一步骤，再上传到服务器上）<br>
 修改 <code>autoload.js</code> 中的常量 <code>live2d_path</code> 为 <code>live2d-widget</code> 这一目录的 URL。比如说，如果你能够通过</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://example.com/path/to/live2d-widget/live2d.min.js</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://example.com/path/to/live2d-widget/live2d.min.js</span><br></pre></td></tr></table></figure>
 <p>访问到 <code>live2d.min.js</code>，那么就把 <code>live2d_path</code> 的值修改为</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://example.com/path/to/live2d-widget/</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://example.com/path/to/live2d-widget/</span><br></pre></td></tr></table></figure>
 <p>路径末尾的 <code>/</code> 一定要加上。具体可以参考 <code>autoload.js</code> 内的注释。<br>
 完成后，在你要添加看板娘的界面加入</p>
-<figure class="highlight xml"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://example.com/path/to/live2d-widget/autoload.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://example.com/path/to/live2d-widget/autoload.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>就可以加载了。</p>
-
-        <h2 id="后端-API"   >
-          <a href="#后端-API" class="heading-link"><i class="fas fa-link"></i></a>后端 API</h2>
-      
+<h2 id="后端-API">后端 API</h2>
 <p><code>initWidget</code> 方法接受名为 <code>apiPath</code> 和 <code>cdnPath</code> 的参数，两者设置其中一项即可。其中 <code>apiPath</code> 为后端 API 的 URL，可以自行搭建，并增加模型（需要修改的内容比较多，此处不再赘述）。而 <code>cdnPath</code> 则是通过 jsDelivr 这样的 CDN 服务加载资源，更加稳定。</p>
-
-        <h2 id="目录结构-Files"   >
-          <a href="#目录结构-Files" class="heading-link"><i class="fas fa-link"></i></a>目录结构 Files</h2>
-      
+<h2 id="目录结构-Files">目录结构 Files</h2>
 <ul>
 <li><code>waifu-tips.js</code> 包含了按钮和对话框的逻辑；</li>
 <li><code>waifu-tips.json</code> 中定义了触发条件（<code>selector</code>，CSS 选择器）和触发时显示的文字（<code>text</code>）；</li>
 <li><code>waifu.css</code> 是看板娘的样式表。</li>
 </ul>
-<p>源文件是对 Hexo 的 <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://github.com/next-theme/hexo-theme-next" >NexT 主题</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>有效的，为了适用于你自己的网页，可能需要自行修改，或增加新内容。<br>
+<p>源文件是对 Hexo 的 <a target="_blank" rel="noopener" href="http://github.com/next-theme/hexo-theme-next">NexT 主题</a>有效的，为了适用于你自己的网页，可能需要自行修改，或增加新内容。<br>
 <strong>警告：作者不对包括但不限于 <code>waifu-tips.js</code> 和 <code>waifu-tips.json</code> 文件中的内容负责，请自行确保它们是合适的。</strong></p>
 <p>如果有任何疑问，欢迎提 Issue。如果有任何修改建议，欢迎提 Pull Request。</p>
-
-        <h2 id="鸣谢-Thanks"   >
-          <a href="#鸣谢-Thanks" class="heading-link"><i class="fas fa-link"></i></a>鸣谢 Thanks</h2>
-      
+<h2 id="鸣谢-Thanks">鸣谢 Thanks</h2>
 <p><a target="_blank" rel="noopener" href="https://www.browserstack.com/"><img height="80" src="https://live.browserstack.com/images/opensource/browserstack-logo.svg" alt="BrowserStack Logo"></a></p>
 <blockquote>
 <p>感谢 BrowserStack 容许我们在真实的浏览器中测试此项目。<br>
-Thanks to <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.browserstack.com/" >BrowserStack</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> for providing the infrastructure that allows us to test in real browsers!</p>
+Thanks to <a target="_blank" rel="noopener" href="https://www.browserstack.com/">BrowserStack</a> for providing the infrastructure that allows us to test in real browsers!</p>
 </blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.jsdelivr.com"><img height="80" src="https://raw.githubusercontent.com/jsdelivr/jsdelivr-media/master/default/svg/jsdelivr-logo-horizontal.svg"></a></p>
 <blockquote>
@@ -154,62 +224,166 @@ Thanks to <span class="exturl"><a class="exturl__link"   target="_blank" rel="no
 Thanks jsDelivr for providing public CDN service.</p>
 </blockquote>
 <p>代码自这篇博文魔改而来：<br>
-<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.fghrsh.net/post/123.html" >https://www.fghrsh.net/post/123.html</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-<p>点击看板娘的纸飞机按钮时，会出现一个彩蛋，这来自于 <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://www.websiteasteroids.com" >WebsiteAsteroids</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>。</p>
-
-        <h2 id="更多-More"   >
-          <a href="#更多-More" class="heading-link"><i class="fas fa-link"></i></a>更多 More</h2>
-      
+<a target="_blank" rel="noopener" href="https://www.fghrsh.net/post/123.html">https://www.fghrsh.net/post/123.html</a></p>
+<p>点击看板娘的纸飞机按钮时，会出现一个彩蛋，这来自于 <a target="_blank" rel="noopener" href="http://www.websiteasteroids.com">WebsiteAsteroids</a>。</p>
+<h2 id="更多-More">更多 More</h2>
 <p>更多内容可以参考：<br>
-<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02" >https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>
-<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://github.com/xiazeyu/live2d-widget.js" >https://github.com/xiazeyu/live2d-widget.js</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>
-<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://github.com/summerscar/live2dDemo" >https://github.com/summerscar/live2dDemo</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<a target="_blank" rel="noopener" href="https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02">https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02</a><br>
+<a target="_blank" rel="noopener" href="https://github.com/xiazeyu/live2d-widget.js">https://github.com/xiazeyu/live2d-widget.js</a><br>
+<a target="_blank" rel="noopener" href="https://github.com/summerscar/live2dDemo">https://github.com/summerscar/live2dDemo</a></p>
 <p>关于后端 API 模型：<br>
-<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://github.com/fghrsh/live2d_api" >https://github.com/fghrsh/live2d_api</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>
-<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://github.com/xiazeyu/live2d-widget-models" >https://github.com/xiazeyu/live2d-widget-models</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>
-<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://github.com/xiaoski/live2d_models_collection" >https://github.com/xiaoski/live2d_models_collection</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<a target="_blank" rel="noopener" href="https://github.com/fghrsh/live2d_api">https://github.com/fghrsh/live2d_api</a><br>
+<a target="_blank" rel="noopener" href="https://github.com/xiazeyu/live2d-widget-models">https://github.com/xiazeyu/live2d-widget-models</a><br>
+<a target="_blank" rel="noopener" href="https://github.com/xiaoski/live2d_models_collection">https://github.com/xiaoski/live2d_models_collection</a></p>
 <p>除此之外，还有桌面版本：<br>
-<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://github.com/amorist/platelet" >https://github.com/amorist/platelet</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>
-<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://github.com/akiroz/Live2D-Widget" >https://github.com/akiroz/Live2D-Widget</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>
-<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://github.com/zenghongtu/PPet" >https://github.com/zenghongtu/PPet</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>
-<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://github.com/LikeNeko/L2dPetForMac" >https://github.com/LikeNeko/L2dPetForMac</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<a target="_blank" rel="noopener" href="https://github.com/amorist/platelet">https://github.com/amorist/platelet</a><br>
+<a target="_blank" rel="noopener" href="https://github.com/akiroz/Live2D-Widget">https://github.com/akiroz/Live2D-Widget</a><br>
+<a target="_blank" rel="noopener" href="https://github.com/zenghongtu/PPet">https://github.com/zenghongtu/PPet</a><br>
+<a target="_blank" rel="noopener" href="https://github.com/LikeNeko/L2dPetForMac">https://github.com/LikeNeko/L2dPetForMac</a></p>
 <p>以及 Wallpaper Engine：<br>
-<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://github.com/guansss/nep-live2d" >https://github.com/guansss/nep-live2d</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-
-        <h2 id="许可证-License"   >
-          <a href="#许可证-License" class="heading-link"><i class="fas fa-link"></i></a>许可证 License</h2>
-      
+<a target="_blank" rel="noopener" href="https://github.com/guansss/nep-live2d">https://github.com/guansss/nep-live2d</a></p>
+<h2 id="许可证-License">许可证 License</h2>
 <p>Released under the GNU General Public License v3<br>
-<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://www.gnu.org/licenses/gpl-3.0.html" >http://www.gnu.org/licenses/gpl-3.0.html</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<a target="_blank" rel="noopener" href="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</a></p>
 <p>本仓库并不包含任何模型，用作展示的所有 Live2D 模型、图片、动作数据等版权均属于其原作者，仅供研究学习，不得用于商业用途。</p>
 <p>Live2D 官方网站：<br>
-<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.live2d.com/en/" >https://www.live2d.com/en/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>
-<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://live2d.github.io" >https://live2d.github.io</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<a target="_blank" rel="noopener" href="https://www.live2d.com/en/">https://www.live2d.com/en/</a><br>
+<a target="_blank" rel="noopener" href="https://live2d.github.io">https://live2d.github.io</a></p>
 <p>Live2D Cubism Core は Live2D Proprietary Software License で提供しています。<br>
-<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.live2d.com/eula/live2d-proprietary-software-license-agreement_en.html" >https://www.live2d.com/eula/live2d-proprietary-software-license-agreement_en.html</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>
+<a target="_blank" rel="noopener" href="https://www.live2d.com/eula/live2d-proprietary-software-license-agreement_en.html">https://www.live2d.com/eula/live2d-proprietary-software-license-agreement_en.html</a><br>
 Live2D Cubism Components は Live2D Open Software License で提供しています。<br>
-<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://www.live2d.com/eula/live2d-open-software-license-agreement_en.html" >http://www.live2d.com/eula/live2d-open-software-license-agreement_en.html</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<a target="_blank" rel="noopener" href="http://www.live2d.com/eula/live2d-open-software-license-agreement_en.html">http://www.live2d.com/eula/live2d-open-software-license-agreement_en.html</a></p>
 <blockquote>
 <p>The terms and conditions do prohibit modification, but obfuscating in <code>live2d.min.js</code> would not be considered illegal modification.</p>
 </blockquote>
-<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://community.live2d.com/discussion/140/webgl-developer-licence-and-javascript-question" >https://community.live2d.com/discussion/140/webgl-developer-licence-and-javascript-question</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-
-        <h2 id="更新-Update"   >
-          <a href="#更新-Update" class="heading-link"><i class="fas fa-link"></i></a>更新 Update</h2>
-      
+<p><a target="_blank" rel="noopener" href="https://community.live2d.com/discussion/140/webgl-developer-licence-and-javascript-question">https://community.live2d.com/discussion/140/webgl-developer-licence-and-javascript-question</a></p>
+<h2 id="更新-Update">更新 Update</h2>
 <p>2018年10月31日，由 fghrsh 提供的原 API 停用，请更新至新地址。参考文章：<br>
-<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.fghrsh.net/post/170.html" >https://www.fghrsh.net/post/170.html</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<a target="_blank" rel="noopener" href="https://www.fghrsh.net/post/170.html">https://www.fghrsh.net/post/170.html</a></p>
 <p>2020年1月1日起，本项目不再依赖于 jQuery。</p>
-</div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Live2D Widget 自用二改版</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E6%80%A7-Feature"><span class="toc-number">1.1.</span> <span class="toc-text">
-          特性 Feature</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-Demo"><span class="toc-number">1.2.</span> <span class="toc-text">
-          示例 Demo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96-Dependencies"><span class="toc-number">1.3.</span> <span class="toc-text">
-          依赖 Dependencies</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-Usage"><span class="toc-number">1.4.</span> <span class="toc-text">
-          使用 Usage</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Using-CDN"><span class="toc-number">1.4.1.</span> <span class="toc-text">
-          Using CDN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Self-host"><span class="toc-number">1.4.2.</span> <span class="toc-text">
-          Self-host</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF-API"><span class="toc-number">1.5.</span> <span class="toc-text">
-          后端 API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84-Files"><span class="toc-number">1.6.</span> <span class="toc-text">
-          目录结构 Files</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%B8%A3%E8%B0%A2-Thanks"><span class="toc-number">1.7.</span> <span class="toc-text">
-          鸣谢 Thanks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E5%A4%9A-More"><span class="toc-number">1.8.</span> <span class="toc-text">
-          更多 More</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%B8%E5%8F%AF%E8%AF%81-License"><span class="toc-number">1.9.</span> <span class="toc-text">
-          许可证 License</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0-Update"><span class="toc-number">1.10.</span> <span class="toc-text">
-          更新 Update</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/assets/head.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">Future is now.</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">1</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">2</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">2</div><div class="sidebar-ov-state-item__name">标签</div></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Fomalhaut🥝</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
+</div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/assets/head.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Fomalhaut🥝</div><div class="author-info__description">Future is now.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/fomalhaut1998"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/fomalhaut1998" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1174008660@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/220757832" target="_blank" title="B站"><i class="fa-brands fa-bilibili"></i></a><a class="social-icon" href="https://leetcode.cn/u/fomalhaut1998/" target="_blank" title="力扣"><i class="fa-regular fa-l"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/test1.html" title="网站测试.."><img src="/assets/sunset.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="网站测试.."/></a><div class="content"><a class="title" href="/test1.html" title="网站测试..">网站测试..</a><time datetime="2022-08-09T10:19:03.000Z" title="发表于 2022-08-09 18:19:03">2022-08-09</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E6%A0%87%E7%AD%BE1/" style="font-size: 1.15em; color: rgb(73, 108, 155)">标签1</a><a href="/tags/%E6%A0%87%E7%AD%BE2/" style="font-size: 1.15em; color: rgb(93, 102, 14)">标签2</a></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">1</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2022-08-08T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">275</div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-08-10T11:34:53.808Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 By Fomalhaut🥝</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">2</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'https://fomalhaut1998.github.io/live2d-widget-master/README.html'
+    this.page.identifier = '/live2d-widget-master/README.html'
+    this.page.title = ''
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://fomalhaut1998.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Disqus' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="30" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body></html>
