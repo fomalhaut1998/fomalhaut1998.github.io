@@ -396,9 +396,9 @@
       
         <tags>
             
-            <tag> 多源BFS </tag>
-            
             <tag> BFS </tag>
+            
+            <tag> 多源BFS </tag>
             
         </tags>
       
@@ -535,9 +535,9 @@
       
         <tags>
             
-            <tag> BFS </tag>
-            
             <tag> Dijkstra </tag>
+            
+            <tag> BFS </tag>
             
             <tag> 状态压缩 </tag>
             
