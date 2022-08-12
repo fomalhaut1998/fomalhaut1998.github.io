@@ -1,97 +1,102 @@
 /* 代码高亮字体 */
 :root {
-    --hl-color: #24292e;
-    --hl-bg: rgb(246 248 250);
-    --hltools-bg: #49b1f587;
-    --hltools-color: #ffffff;
-    --hlnumber-bg: rgb(235 239 241);
-    --hlnumber-color: #221a0f52;
-  }
-  .hljs {
-    background: white;
-    color: black;
-  }
-  
-  .hljs-comment,
-  .hljs-quote,
-  .hljs-variable {
-    color: #008000;
-  }
-  
-  .hljs-keyword,
-  .hljs-selector-tag,
-  .hljs-built_in,
-  .hljs-name,
-  .hljs-tag {
-    color: #00f;
-  }
-  
-  .hljs-string,
-  .hljs-title,
-  .hljs-section,
-  .hljs-attribute,
-  .hljs-literal,
-  .hljs-template-tag,
-  .hljs-template-variable,
-  .hljs-type,
-  .hljs-addition {
-    color: #a31515;
-  }
-  
-  .hljs-deletion,
-  .hljs-selector-attr,
-  .hljs-selector-pseudo,
-  .hljs-meta {
-    color: #2b91af;
-  }
-  
-  .hljs-doctag {
-    color: #808080;
-  }
-  
-  .hljs-attr {
-    color: #f00;
-  }
-  
-  .hljs-symbol,
-  .hljs-bullet,
-  .hljs-link {
-    color: #00b0e8;
-  }
-  
-  
-  .hljs-emphasis {
-    font-style: italic;
-  }
-  
-  .hljs-strong {
-    font-weight: bold;
-  }
+  --hl-color: #24292e;
+  --hl-bg: rgb(246 248 250);
+  --hltools-bg: #49b1f587;
+  --hltools-color: #ffffff;
+  --hlnumber-bg: rgb(235 239 241);
+  --hlnumber-color: #221a0f52;
+}
 
-  /* CSS */
+.hljs {
+  background: white;
+  color: black;
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-variable {
+  color: #008000;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-built_in,
+.hljs-name,
+.hljs-tag {
+  color: #00f;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-section,
+.hljs-attribute,
+.hljs-literal,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-addition {
+  color: #a31515;
+}
+
+.hljs-deletion,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-meta {
+  color: #2b91af;
+}
+
+.hljs-doctag {
+  color: #808080;
+}
+
+.hljs-attr {
+  color: #f00;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link {
+  color: #00b0e8;
+}
+
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+/* CSS */
 @import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
 
 h1#site-title {
-  font-size: 7vh!important;
-  text-shadow:5px 2px 6px #000!important;
-  font-family:Fira Code!important
+  font-size: 7vh !important;
+  text-shadow: 5px 2px 6px #000 !important;
+  font-family: Fira Code !important
 }
+
 span#subtitle {
-  font-size: 3vh!important;
-  text-shadow:5px 2px 6px #000!important;
-  font-family:Fira Code!important
+  font-size: 3vh !important;
+  text-shadow: 5px 2px 6px #000 !important;
+  font-family: Fira Code !important
 }
+
 /* a#site-name {
   text-shadow:5px 2px 6px #000!important;
   font-family:Fira Code!important
 } */
 
-#article-container pre, #article-container code {
-  font-family:Consolas;
+#article-container pre,
+#article-container code {
+  font-family: Consolas;
 }
+
 .article-title {
   font-weight: bolder;
-  font-family:Fira Code!important;
+  font-family: Fira Code !important;
 }
 
 /* 页脚footer */
