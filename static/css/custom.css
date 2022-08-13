@@ -1,86 +1,109 @@
 /* 代码高亮字体 */
+
 :root {
-  --hl-color: #24292e;
-  --hl-bg: rgb(246 248 250);
-  --hltools-bg: #49b1f587;
+  /* --hl-color: #f8f8f2; */
+  --hl-bg: #282C34; 
+  /* --hltools-bg: #49b1f587;
   --hltools-color: #ffffff;
   --hlnumber-bg: rgb(235 239 241);
-  --hlnumber-color: #221a0f52;
+  --hlnumber-color: #221a0f52; */
 }
 
-.hljs {
-  background: white;
-  color: black;
+
+/*
+
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+
+*/
+
+/* .hljs {
+  background: #23241f;
+  color: #f8f8f2;
 }
 
-.hljs-comment,
+.hljs-tag,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
 .hljs-quote,
-.hljs-variable {
-  color: #008000;
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link {
+  color: #ae81ff;
 }
 
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-built_in,
-.hljs-name,
-.hljs-tag {
-  color: #00f;
-}
-
-.hljs-string,
+.hljs-code,
 .hljs-title,
 .hljs-section,
-.hljs-attribute,
-.hljs-literal,
-.hljs-template-tag,
-.hljs-template-variable,
-.hljs-type,
-.hljs-addition {
-  color: #a31515;
-}
-
-.hljs-deletion,
-.hljs-selector-attr,
-.hljs-selector-pseudo,
-.hljs-meta {
-  color: #2b91af;
-}
-
-.hljs-doctag {
-  color: #808080;
-}
-
-.hljs-attr {
-  color: #f00;
-}
-
-.hljs-symbol,
-.hljs-bullet,
-.hljs-link {
-  color: #00b0e8;
-}
-
-
-.hljs-emphasis {
-  font-style: italic;
+.hljs-selector-class {
+  color: #a6e22e;
 }
 
 .hljs-strong {
   font-weight: bold;
 }
 
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-attr {
+  color: #f92672;
+}
+
+.hljs-symbol,
+.hljs-attribute {
+  color: #66d9ef;
+}
+
+.hljs-params,
+.hljs-title.class_,
+.hljs-class .hljs-title {
+  color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-type,
+.hljs-built_in,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-variable {
+  color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #75715e;
+} */
+
+
 /* CSS */
 @import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
 
 h1#site-title {
-  font-size: 7vh !important;
-  text-shadow: 5px 2px 6px #000 !important;
+  font-size: 6vh !important;
+  text-shadow: 4px 2px 5px #000 !important;
   font-family: Fira Code !important
 }
 
 span#subtitle {
   font-size: 3vh !important;
-  text-shadow: 5px 2px 6px #000 !important;
+  text-shadow: 4px 2px 6px #000 !important;
   font-family: Fira Code !important
 }
 
@@ -99,8 +122,42 @@ span#subtitle {
   font-family: Fira Code !important;
 }
 
-/* 页脚footer */
-#footer {
-  /* 与背景渐变效果一致*/
+/* 页脚footer(渐变色) */
+/* #footer {
   background-image: linear-gradient(-225deg, #d6badf 0%, #B8DCFF 28%, #58abf3 100%);
+} */
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(73, 177, 245, 0.2);
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #49b1f5;
+  background-image: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.4) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.4) 75%,
+    transparent 75%,
+    transparent
+  );
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+::-moz-selection {
+  color: #fff;
+  background-color: #49b1f5;
 }

@@ -1,8 +1,7 @@
 body {
-    cursor: url(https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/img/default.cur), default;
+    cursor: url(/assets/c11.cur), auto;
 }
-
 a,
 img {
-    cursor: url(https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/img/pointer.cur), default;
+    cursor: url(/assets/c10.cur), auto;
 }
