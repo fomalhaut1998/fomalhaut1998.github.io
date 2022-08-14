@@ -288,9 +288,9 @@
       
         <tags>
             
-            <tag> 图 </tag>
-            
             <tag> 并查集 </tag>
+            
+            <tag> 图 </tag>
             
         </tags>
       
@@ -504,13 +504,13 @@
       
         <tags>
             
+            <tag> 图 </tag>
+            
             <tag> DFS </tag>
             
             <tag> 拓扑排序 </tag>
             
             <tag> 时间戳 </tag>
-            
-            <tag> 图 </tag>
             
         </tags>
       
