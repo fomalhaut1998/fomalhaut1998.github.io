@@ -343,3 +343,14 @@ a,
 button:not(:disabled) {
   cursor: url('/assets/c4.cur'), auto !important;
 }
+
+/* 避免图标冲突 */
+svg.icon {
+  /* 这里定义svg.icon，避免和Butterfly自带的note标签冲突 */
+  width: 1em;
+  height: 1em;
+  /* width和height定义图标的默认宽度和高度*/
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
