@@ -447,9 +447,9 @@
     <category term="算法" scheme="https://www.fomal.cc/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="多源BFS" scheme="https://www.fomal.cc/tags/%E5%A4%9A%E6%BA%90BFS/"/>
-    
     <category term="BFS" scheme="https://www.fomal.cc/tags/BFS/"/>
+    
+    <category term="多源BFS" scheme="https://www.fomal.cc/tags/%E5%A4%9A%E6%BA%90BFS/"/>
     
   </entry>
   
