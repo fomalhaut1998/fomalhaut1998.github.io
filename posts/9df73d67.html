@@ -1,0 +1,577 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><div id="myscoll"></div><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>最短路径算法 | Fomalhaut🥝</title><meta name="keywords" content="BFS,Dijkstra,状态压缩"><meta name="author" content="Fomalhaut🥝"><meta name="copyright" content="Fomalhaut🥝"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="最短路径算法是图论中一种比较基础的算法：这里仅介绍最常用的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最短路径算法">
+<meta property="og:url" content="https://www.fomal.cc/posts/9df73d67.html">
+<meta property="og:site_name" content="Fomalhaut🥝">
+<meta property="og:description" content="最短路径算法是图论中一种比较基础的算法：这里仅介绍最常用的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://unpkg.com/fomalhaut1998_picgodemo@latest/img/default_cover_185.jpg">
+<meta property="article:published_time" content="2022-08-11T11:40:12.000Z">
+<meta property="article:modified_time" content="2022-08-11T11:40:12.000Z">
+<meta property="article:author" content="Fomalhaut🥝">
+<meta property="article:tag" content="BFS">
+<meta property="article:tag" content="Dijkstra">
+<meta property="article:tag" content="状态压缩">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://unpkg.com/fomalhaut1998_picgodemo@latest/img/default_cover_185.jpg"><link rel="shortcut icon" href="/assets/coffee.png"><link rel="canonical" href="https://www.fomal.cc/posts/9df73d67"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/manifest.json"/><meta name="msapplication-TileColor" content="#5fc4e6"/><link rel="apple-touch-icon" sizes="180x180" href="/assets/gulp/siteicon/128.png"/><link rel="icon" type="image/png" sizes="32x32" href="/assets/gulp/siteicon/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/assets/gulp/siteicon/16.png"/><link rel="mask-icon" href="/assets/gulp/siteicon/128.png" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?4676d2185238807be2384e3987fd51bb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://unpkg.com/fomalhaut1998_picgodemo@latest/fonts/ZhuZiAWan.woff2" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"0FLOBPS24V","apiKey":"614f2ca30a22eb184a406c931c2223dc","indexName":"fomal.cc","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-right"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '最短路径算法',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-08-11 19:40:12'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script data-pjax src="https://unpkg.com/fomalhaut1998_picgodemo@latest/js/echarts.min.js"></script><script src="https://npm.elemecdn.com/echarts@4.9.0/map/js/china.js"></script><link rel="stylesheet" href="/static/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/static/css/universe.css?version=220002"><link rel="stylesheet" href="/static/css/progress_bar.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/static/css/rightmenu.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/static/css/font-awesome.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="//at.alicdn.com/t/c/font_3586335_5nj7oxp9bqc.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="//at.alicdn.com/t/c/font_3636804_37rup3ugb9q.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="//at.alicdn.com/t/c/font_3642746_db7ok3nzpbg.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn1.tianli0.top/npm/element-ui@2.15.6/packages/theme-chalk/lib/index.css"><link rel="stylesheet" href="/static/css/cat.css"><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><link rel="stylesheet" href="/static/css/runtime.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Fomalhaut🥝" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="cat__scene"><div class="cat__main"><div class="cat__body"></div><div class="cat__body"></div><div class="cat__tail"></div><div class="cat__head"></div></div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/assets/head.jpg" onerror="onerror=null;src='/assets/r1.jpg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">29</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">53</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><i class="fa-fw icon-home"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-home"></use></svg><span> 首页</span></a></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);" rel="external nofollow noreferrer"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-xiewenzhang"></use></svg><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-guidang1">                   </use></svg><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-sekuaibiaoqian">                   </use></svg><span> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-fenlei">                   </use></svg><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:randomPost();" rel="external nofollow noreferrer"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-zuji1">                   </use></svg><span> 随便逛逛</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);" rel="external nofollow noreferrer"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-pinweishenghuo"></use></svg><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/life/music/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-yinle">                   </use></svg><span> 八音盒</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/life/movies/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-dianying1">                   </use></svg><span> 影院</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/life/games/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-youxishoubing">                   </use></svg><span> 游戏</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);" rel="external nofollow noreferrer"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-xiangzi"></use></svg><span> 八宝箱</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/box/Gallery/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-tubiaozhizuomoban">                   </use></svg><span> 画廊</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/box/tools/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-gongju">                   </use></svg><span> 工具</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/box/animation/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-nvwumao">                   </use></svg><span> 动画</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/box/skyeye/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-weixing">                   </use></svg><span> 天眼</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);" rel="external nofollow noreferrer"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-shejiaoxinxi"></use></svg><span> 社交</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/social/fcircle/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-pengyouquan">                   </use></svg><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-liuyan">                   </use></svg><span> 留言板</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/social/link/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-lianjie">                   </use></svg><span> 友人帐</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);" rel="external nofollow noreferrer"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-wangye"></use></svg><span> 网站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/site/census/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon--tongjibiao">                   </use></svg><span> 网站统计</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/site/echarts/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-shujutongji1">                   </use></svg><span> 文章统计</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/site/time/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-xianxingshalou">                   </use></svg><span> 旧时光</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);" rel="external nofollow noreferrer"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-maoliang"></use></svg><span> 个人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/personal/bb/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-qunliaotian">                   </use></svg><span> 唠叨</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/personal/about/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-zhifeiji">                   </use></svg><span> 关于</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://unpkg.com/fomalhaut1998_picgodemo@latest/img/default_cover_185.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Fomalhaut🥝</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search faa-parent animated-hover" title="检索站内任何你想要的信息"><svg class="faa-tada icon" style="height:25px;width:25px" aria-hidden="true"><use xlink:href="#icon-sousuo"></use></svg><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><i class="fa-fw icon-home"></i><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-home"></use></svg><span> 首页</span></a></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);" rel="external nofollow noreferrer"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-xiewenzhang"></use></svg><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-guidang1">                   </use></svg><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-sekuaibiaoqian">                   </use></svg><span> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-fenlei">                   </use></svg><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:randomPost();" rel="external nofollow noreferrer"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-zuji1">                   </use></svg><span> 随便逛逛</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);" rel="external nofollow noreferrer"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-pinweishenghuo"></use></svg><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/life/music/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-yinle">                   </use></svg><span> 八音盒</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/life/movies/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-dianying1">                   </use></svg><span> 影院</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/life/games/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-youxishoubing">                   </use></svg><span> 游戏</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);" rel="external nofollow noreferrer"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-xiangzi"></use></svg><span> 八宝箱</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/box/Gallery/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-tubiaozhizuomoban">                   </use></svg><span> 画廊</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/box/tools/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-gongju">                   </use></svg><span> 工具</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/box/animation/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-nvwumao">                   </use></svg><span> 动画</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/box/skyeye/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-weixing">                   </use></svg><span> 天眼</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);" rel="external nofollow noreferrer"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-shejiaoxinxi"></use></svg><span> 社交</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/social/fcircle/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-pengyouquan">                   </use></svg><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-liuyan">                   </use></svg><span> 留言板</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/social/link/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-lianjie">                   </use></svg><span> 友人帐</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);" rel="external nofollow noreferrer"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-wangye"></use></svg><span> 网站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/site/census/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon--tongjibiao">                   </use></svg><span> 网站统计</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/site/echarts/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-shujutongji1">                   </use></svg><span> 文章统计</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/site/time/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-xianxingshalou">                   </use></svg><span> 旧时光</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);" rel="external nofollow noreferrer"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-maoliang"></use></svg><span> 个人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/personal/bb/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-qunliaotian">                   </use></svg><span> 唠叨</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/personal/about/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-zhifeiji">                   </use></svg><span> 关于</span></a></li></ul></div></div><a class="site-page social-icon search faa-parent animated-hover" href="javascript:;" rel="external nofollow noreferrer" onclick="toggleWinbox()" title="切换背景-换一种感觉"><svg class="faa-tada icon" style="height:25px;width:25px" aria-hidden="true"><use xlink:href="#icon-tupian"></use></svg></a><a class="icon-V hidden faa-parent animated-hover" onclick="switchNightMode()" title="浅色和深色模式转换"><svg class="faa-tada" width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">最短路径算法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-11T11:40:12.000Z" title="发表于 2022-08-11 19:40:12">2022-08-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-11T11:40:12.000Z" title="更新于 2022-08-11 19:40:12">2022-08-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>12分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="最短路径算法"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="1-Dijkstra算法（优先用堆优化实现方式）">1.Dijkstra算法（优先用堆优化实现方式）</h3>
+<p><strong>主要步骤：</strong></p>
+<p>1.每次从<strong>未标记的节点</strong>中选择<strong>距离出发点最近</strong>的节点，标记，收录到最优路径集合中。</p>
+<p>⒉计算刚加入节点A的邻近节点B的距离（不包含标记的节点)</p>
+<p>若 <strong>（节点A的距离+节点A到节点B的边长)&lt;节点B的距离</strong> ，就<strong>更新节点B的距离和前面点</strong>。</p>
+<p>本质是<strong>贪心算法</strong>：我现在就把出发点到B的已知的最短距离摆在这里，下次如果你要从出发点起出发路过B然后到达C，且B到C仅有一条路径，距离是固定的，因此必定是用先前求出来的出发点到B的最短距离来进行求解，这是出发点经过B到C的最短路径；当然，走到C可不止经过B这一种路径，还可能经过X到达C，那么我开门这时候就可以维护出发点到达C的最短路，到时候这个到达C的最短路又可以用了；以此类推直至到达终点。</p>
+<p>注意：Dijkstra算法只适用于权重为非负数的带权图！<br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../images/p4.jpg" alt="p4"></p>
+<p>或者和BFS进行类比，BFS是每次走1步，如果当路径很长时显然不现实；</p>
+<p>因此，Dijkstra算法每次迭代是以节点作为单元，通常为了节省时间我们会用<strong>堆（TreeSet?）</strong> 来优化</p>
+<p>总的时间复杂度为:O(NlogN) 空间复杂度:O(N)  其中N为边数</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../images/p5.jpg" alt="p5"></p>
+<p>以上图为例，从节点0开始出发，从现在起只向前走，0已经被标记了不会再走回头路，marked=[0]；</p>
+<p>节点[4,5] [6,7] [1,2] 入队，接下来先弹出距离起点最短的节点1([1,2])（为啥可以这么快弹出来？因为可以确定出发点0到节点1最短距离就是2，其他节点要想走到节点1只能从4和6走，又由于<strong>没有负边权</strong>其他路肯定更长，因此出发点到节点1的最短距离就是2）</p>
+<p><strong>节点弹出就意味着起点到弹出的节点最短距离已经确定了，此时可以标记掉节点1下次不用再走回头路，marked=[0,1]</strong></p>
+<p>节点1下面有节点2和3，此时计算后为[2,5] [3,5]入队；此时队列中元素为 que= [[4,5] [6,7] [2,5] [3,5]]</p>
+<p>又进入下一轮的筛选，到起点距离最短的节点有3个，距离都为5</p>
+<p>假如弹出节点4，那么[6,7]就会入队  此时队列为 que=[[6,7] [6,7] [2,5] [3,5]] marked=[0,1,4]</p>
+<p>接下来弹出[2,5] 加入[5,6]    此时队列为 que=[[6,7] [6,7] [5,6] [3,5]] marked=[0,1,2,4]</p>
+<p>弹出[3,5] 加入[5,6]  此时队列为 que=[[6,7] [6,7] [5,6] [5,6]] marked=[0,1,2,3,4]</p>
+<p>弹出[5,6] 加入[6,7]  此时队列为 que=[[6,7] [6,7] [6,7] [5,6]] marked=[0,1,2,3,4,5]</p>
+<p>弹出[5,6] 加入[6,7]  此时队列为 que=[[6,7] [6,7] [6,7] [6,7]] marked=[0,1,2,3,4,5]</p>
+<p>弹出[6,7] 标记节点6  que=[[6,7] [6,7] [6,7]] marked=[0,1,2,3,4,5,6]</p>
+<p>至此，搜索完毕，此时的节点0到节点6最短距离为7</p>
+<p><strong>关于 Dijkstra算法节点标记访问的问题：</strong></p>
+<p>1.如果是边权只有0与正数的，可以在入队时候直接标记，因为到时候兜回来肯定比现在的长（提高性能）；</p>
+<p>2.如果边权不是上述情况，只能在弹出的时候标记访问，只有在弹出时才可以确定起点到该点的最短路径。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../images/p6.jpg" alt="p6"><br>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../images/p7.jpg" alt="p7"></p>
+<p>参考：</p>
+<p><strong>1.Dijkstra图解动画：</strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.bilibili.com/video/BV1zz4y1m7Nq">【算法】最短路径查找—Dijkstra算法_哔哩哔哩_bilibili</a></p>
+<p><strong>2.三叶姐的最短路径模板(背下来)</strong>：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://mp.weixin.qq.com/s?__biz=MzU4NDE3MTEyMA==&amp;mid=2247488007&amp;idx=1&amp;sn=9d0dcfdf475168d26a5a4bd6fcd3505d&amp;chksm=fd9cb918caeb300e1c8844583db5c5318a89e60d8d552747ff8c2256910d32acd9013c93058f&amp;token=211780171&amp;lang=zh_CN#rd">三叶姐最短路模板</a></p>
+<p><strong>3.自己写的答案与例题：</strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/problems/network-delay-time/">743. 网络延迟时间</a></p>
+<p><strong>4.矩阵型Dijkstra参考：</strong></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/problems/cut-off-trees-for-golf-event/">675. 为高尔夫比赛砍树</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/problems/minimum-obstacle-removal-to-reach-corner/">2290. 到达角落需要移除障碍物的最小数目</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/">1368. 使网格图至少有一条有效路径的最小代价</a></p>
+<p><strong>标准模板（矩阵型的图可以将二维(x,y)坐标压缩成一维m*x+y）：</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">minCost</span><span class="params">(<span class="type">int</span>[][] grid)</span> &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        最短路算法:</span></span><br><span class="line"><span class="comment">        我们先别被箭头迷惑了，先把所有路都当做可以走，不过要走到下一个节点的代价增加了而已</span></span><br><span class="line"><span class="comment">        看到了这一点那么这题就可以转化为最短路径的题目</span></span><br><span class="line"><span class="comment">        网格中某个点grid[i][j]每次可以往上下左右走一格</span></span><br><span class="line"><span class="comment">        1.如果走的方向与原来的方向不一致则消耗一次改格子的次数，cost++</span></span><br><span class="line"><span class="comment">        2.如果走的方向与原来的方向一致则不消耗次数，cost不变</span></span><br><span class="line"><span class="comment">        求到达grid[m-1][n-1]消耗的最少次数（最小代价、最短路径）</span></span><br><span class="line"><span class="comment">        因为代价只有0和1两种，因此既可以用Dijkstra算法，又可以用01BFS</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="comment">// 解法1:Dijkstra算法</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">m</span> <span class="operator">=</span> grid.length, n = grid[<span class="number">0</span>].length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">INF</span> <span class="operator">=</span> <span class="number">0x3f3f3f3f</span>;</span><br><span class="line">        <span class="type">int</span>[][] dirs = &#123;&#123;<span class="number">0</span>, <span class="number">1</span>&#125;, &#123;<span class="number">0</span>, -<span class="number">1</span>&#125;, &#123;<span class="number">1</span>, <span class="number">0</span>&#125;, &#123;-<span class="number">1</span>, <span class="number">0</span>&#125;&#125;;</span><br><span class="line">        <span class="type">boolean</span>[][] vis = <span class="keyword">new</span> <span class="title class_">boolean</span>[m][n];</span><br><span class="line">        <span class="type">int</span>[][] cost = <span class="keyword">new</span> <span class="title class_">int</span>[m][n];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">            Arrays.fill(cost[i], INF);</span><br><span class="line">        &#125;</span><br><span class="line">        cost[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 根据到起点的最短距离升序(注意最好不要根据cost直接排序，因为cost会随时改变，弹出时会有出错风险)</span></span><br><span class="line">        <span class="comment">// 也就是说你的cost改变了后，pq里面放在头部的元素可能还未来得及改变，因此最好的比较的变量独立且不会被修改</span></span><br><span class="line">        PriorityQueue&lt;<span class="type">int</span>[]&gt; pq = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;&gt;(Comparator.comparingInt(a -&gt; a[<span class="number">0</span>]));</span><br><span class="line">        pq.add(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>&#125;);</span><br><span class="line">        <span class="keyword">while</span> (!pq.isEmpty()) &#123;</span><br><span class="line">            <span class="type">int</span>[] p = pq.poll();</span><br><span class="line">            <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> p[<span class="number">1</span>], y = p[<span class="number">2</span>];</span><br><span class="line">            <span class="keyword">if</span> (vis[x][y]) <span class="keyword">continue</span>;    <span class="comment">// 访问过就跳过</span></span><br><span class="line">            vis[x][y] = <span class="literal">true</span>;   <span class="comment">// 当且仅当弹出才能确定起点到达改点的最小代价，标记为true</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">                <span class="type">int</span> <span class="variable">nx</span> <span class="operator">=</span> x + dirs[i][<span class="number">0</span>], ny = y + dirs[i][<span class="number">1</span>];</span><br><span class="line">                <span class="comment">// 在区域内才需要计算，这里不用保证未访问过，因为前面的路是新的</span></span><br><span class="line">                <span class="keyword">if</span> (nx &gt;= <span class="number">0</span> &amp;&amp; nx &lt; m &amp;&amp; ny &gt;= <span class="number">0</span> &amp;&amp; ny &lt; n) &#123;</span><br><span class="line">                    <span class="comment">// 只有方向对才不用付出代价，否则要付出代价</span></span><br><span class="line">                    <span class="type">int</span> <span class="variable">g</span> <span class="operator">=</span> i + <span class="number">1</span> == grid[x][y] ? <span class="number">0</span> : <span class="number">1</span>;</span><br><span class="line">                    <span class="comment">// nc为起点经过grid[x][y]到达grid[nx][ny]的最小代价</span></span><br><span class="line">                    <span class="type">int</span> <span class="variable">nc</span> <span class="operator">=</span> cost[x][y] + g;</span><br><span class="line">                    <span class="comment">// 小于原来的cost[nx][ny]就可以更新并入队</span></span><br><span class="line">                    <span class="keyword">if</span> (nc &lt; cost[nx][ny]) &#123;</span><br><span class="line">                        cost[nx][ny] = nc;</span><br><span class="line">                        pq.add(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;nc, nx, ny&#125;);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cost[m - <span class="number">1</span>][n - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong>自定义比较规则时候的一些细节：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">PriorityQueue&lt;<span class="type">int</span>[]&gt; pq = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;&gt;(Comparator.comparingInt(a -&gt; cost[a[<span class="number">0</span>]][a[<span class="number">1</span>]));</span><br><span class="line">                                                                                       </span><br><span class="line"><span class="comment">//根据到起点的最短距离升序(注意最好不要根据cost直接排序，因为cost会随时改变，弹出时会有出错风险)</span></span><br><span class="line"><span class="comment">//也就是说你的cost改变了后，pq里面放在头部的元素可能还未来得及改变，因此最好的比较的变量独立且不会被修改 </span></span><br><span class="line">PriorityQueue&lt;<span class="type">int</span>[]&gt; pq = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;&gt;(Comparator.comparingInt(a -&gt; a[O]));</span><br></pre></td></tr></table></figure>
+<h3 id="2-01BFS">2.<strong>01BFS</strong></h3>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/problems/minimum-obstacle-removal-to-reach-corner/"><strong>2290. 到达角落需要移除障碍物的最小数目</strong></a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://leetcode.cn/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/"><strong>1368. 使网格图至少有一条有效路径的最小代价</strong></a></p>
+<p>我们都知道BFS是一种最基础的最短路径算法，因为队列保证了距离的二段性，先出队的距离必定小于等于后出队的距离，因此必定会以最短的路径找到终点，类似于洪水均匀蔓延的思想。</p>
+<p>此算法是Dijkstra等求最短路的优秀替代</p>
+<p>适用于求最短路径，但是有个要求：<strong>边权为0和1(或0和其他正数）</strong>。</p>
+<p>求最短路的时间复杂度可以由 O(mlogn) 降到 O(m)！(n为点的个数，m为边的个数）</p>
+<p>原理：这是 dijkstra 的优化，若边权只是 0 和 1 ，启用优先队列未免太浪费资源了！</p>
+<p>用双端队列正是对这个地方的优化，将优先队列插入元素 O(logn) 的时间复杂度降到了 O(1)！！</p>
+<p><strong>过程：</strong></p>
+<p>从起点开始，加入队列。</p>
+<p>while队列非空，取队首元素，用这个节点更新其他节点。</p>
+<p>如果可以更新的话：</p>
+<p>1、边权为0，放到队首。（从边权为0的边走，不增加消耗，得多走这样的边）</p>
+<p>2、边权为其他，放到队尾。（增加消耗，少用）</p>
+<p>（这样，队列前面的元素值一定比后面的元素值小（可以手动模拟下），每次求队首元素来更新相连的点的距离，完美的替代了优先队列的功能！）</p>
+<p><strong>因为将权重为0的节点加入进来不会使得当前最大距离变大，最短路径树还是处于同一层，相当于将等距线最大限度地蔓延到更远的地方。</strong></p>
+<p>参考：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/Mr_dimple/article/details/116864052">双端队列_01bfs——附详解典例</a></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">minimumObstacles</span><span class="params">(<span class="type">int</span>[][] grid)</span> &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        01BFS解法：</span></span><br><span class="line"><span class="comment">        本题相当于求从grid[0,0]到grid[m-1][n-1]的最短路径(最低成本)，其中经过障碍物成本为1，空地成本为0</span></span><br><span class="line"><span class="comment">        用常规的堆优化Dijkstra解法时间复杂度为O(m*n*log(m*n))</span></span><br><span class="line"><span class="comment">        利用01BFS可以将时间复杂度降为O(m*n)，也就是说每个节点只入队1次，不会重复访问且可以在O(1)内找到最短距离的节点</span></span><br><span class="line"><span class="comment">        过程为：用一个双端队列维护入队元素，然后如果下一个格子为0可以进入队头，否则进入队尾</span></span><br><span class="line"><span class="comment">            同时利用一个dis二维数组维护起点蔓延到该点的最短距离，最后返回dis[m-1][n-1]就是所求</span></span><br><span class="line"><span class="comment">        时间复杂度:O(m*n) 空间复杂度:O(m*n)</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">m</span> <span class="operator">=</span> grid.length, n = grid[<span class="number">0</span>].length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">INF</span> <span class="operator">=</span> <span class="number">0x3f3f3f3f</span>;</span><br><span class="line">        <span class="type">int</span>[][] dirs = &#123;&#123;<span class="number">0</span>, <span class="number">1</span>&#125;, &#123;<span class="number">0</span>, -<span class="number">1</span>&#125;, &#123;<span class="number">1</span>, <span class="number">0</span>&#125;, &#123;-<span class="number">1</span>, <span class="number">0</span>&#125;&#125;;</span><br><span class="line">        <span class="type">int</span>[][] dis = <span class="keyword">new</span> <span class="title class_">int</span>[m][n];    <span class="comment">// dis[i][j]维护起点蔓延到grid[i][j]时的最短距离</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">            Arrays.fill(dis[i], INF);</span><br><span class="line">        &#125;</span><br><span class="line">        dis[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span>;  <span class="comment">// 起点到起点的距离为0</span></span><br><span class="line">        Deque&lt;<span class="type">int</span>[]&gt; que = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">        que.add(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">0</span>, <span class="number">0</span>&#125;);</span><br><span class="line">        <span class="keyword">while</span> (!que.isEmpty()) &#123;</span><br><span class="line">            <span class="type">int</span>[] p = que.poll();</span><br><span class="line">            <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> p[<span class="number">0</span>], y = p[<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span>[] d : dirs) &#123;</span><br><span class="line">                <span class="type">int</span> <span class="variable">nx</span> <span class="operator">=</span> x + d[<span class="number">0</span>], ny = y + d[<span class="number">1</span>];</span><br><span class="line">                <span class="keyword">if</span> (nx &gt;= <span class="number">0</span> &amp;&amp; nx &lt; m &amp;&amp; ny &gt;= <span class="number">0</span> &amp;&amp; ny &lt; n) &#123;</span><br><span class="line">                    <span class="type">int</span> <span class="variable">nd</span> <span class="operator">=</span> dis[x][y] + grid[nx][ny];</span><br><span class="line">                    <span class="keyword">if</span> (nd &lt; dis[nx][ny]) &#123;</span><br><span class="line">                        dis[nx][ny] = nd;   <span class="comment">// dis[nx][ny]继承小的值</span></span><br><span class="line">                        <span class="comment">// 看当前格子为0就入队头，否则入队尾</span></span><br><span class="line">                        <span class="keyword">if</span> (grid[nx][ny] == <span class="number">0</span>) &#123;</span><br><span class="line">                            que.addFirst(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;nx, ny&#125;);</span><br><span class="line">                        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                            que.addLast(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;nx, ny&#125;);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dis[m - <span class="number">1</span>][n - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">minCost</span><span class="params">(<span class="type">int</span>[][] grid)</span> &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    最短路径算法:</span></span><br><span class="line"><span class="comment">    我们先别被箭头迷惑了，先把所有路都当做可以走，不过要走到下一个节点的代价增加了而已</span></span><br><span class="line"><span class="comment">    看到了这一点那么这题就可以转化为最短路径的题目</span></span><br><span class="line"><span class="comment">    网格中某个点grid[i][j]每次可以往上下左右走一格</span></span><br><span class="line"><span class="comment">    1.如果走的方向与原来的方向不一致则消耗一次改格子的次数，cost++</span></span><br><span class="line"><span class="comment">    2.如果走的方向与原来的方向一致则不消耗次数，cost不变</span></span><br><span class="line"><span class="comment">    求到达grid[m-1][n-1]消耗的最少次数（最小代价、最短路径）</span></span><br><span class="line"><span class="comment">    因为代价只有0和1两种，因此既可以用Dijkstra算法，又可以用01BFS</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="comment">// 解法2:01BFS</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">m</span> <span class="operator">=</span> grid.length, n = grid[<span class="number">0</span>].length;</span><br><span class="line">    <span class="type">int</span> <span class="variable">INF</span> <span class="operator">=</span> <span class="number">0x3f3f3f3f</span>;</span><br><span class="line">    <span class="type">int</span>[] dx = &#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, -<span class="number">1</span>&#125;, dy = &#123;<span class="number">1</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="type">int</span>[][] cost = <span class="keyword">new</span> <span class="title class_">int</span>[m][n];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">        Arrays.fill(cost[i], INF);</span><br><span class="line">    &#125;</span><br><span class="line">    cost[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    Deque&lt;<span class="type">int</span>[]&gt; que = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">    que.add(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">0</span>, <span class="number">0</span>&#125;);</span><br><span class="line">    <span class="keyword">while</span> (!que.isEmpty()) &#123;</span><br><span class="line">        <span class="type">int</span>[] p = que.pollFirst();</span><br><span class="line">        <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> p[<span class="number">0</span>], y = p[<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">nx</span> <span class="operator">=</span> x + dx[i], ny = y + dy[i];</span><br><span class="line">            <span class="keyword">if</span> (nx &gt;= <span class="number">0</span> &amp;&amp; nx &lt; m &amp;&amp; ny &gt;= <span class="number">0</span> &amp;&amp; ny &lt; n) &#123;</span><br><span class="line">                <span class="comment">// 只有方向对才不用付出代价，否则要付出代价</span></span><br><span class="line">                <span class="type">int</span> <span class="variable">g</span> <span class="operator">=</span> i + <span class="number">1</span> == grid[x][y] ? <span class="number">0</span> : <span class="number">1</span>;</span><br><span class="line">                <span class="comment">// nc为起点经过grid[x][y]到达grid[nx][ny]的最小代价</span></span><br><span class="line">                <span class="type">int</span> <span class="variable">nc</span> <span class="operator">=</span> cost[x][y] + g;</span><br><span class="line">                <span class="comment">// 小于原来的cost[nx][ny]就可以更新并入队</span></span><br><span class="line">                <span class="keyword">if</span> (nc &lt; cost[nx][ny]) &#123;</span><br><span class="line">                    cost[nx][ny] = nc;</span><br><span class="line">                    <span class="comment">// 重点</span></span><br><span class="line">                    <span class="keyword">if</span> (g == <span class="number">0</span>) &#123;</span><br><span class="line">                        que.addFirst(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;nx, ny&#125;);</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        que.addLast(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;nx, ny&#125;);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cost[m - <span class="number">1</span>][n - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-AStar算法（启发式搜索）">3.AStar算法（启发式搜索）</h3>
+<p><strong>待续…</strong></p>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>最短路径算法</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="https://www.fomal.cc/posts/9df73d67.html">https://www.fomal.cc/posts/9df73d67.html</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>Fomalhaut🥝</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2022-08-11</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2022-08-11</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener external nofollow noreferrer" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener external nofollow noreferrer" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/BFS/">BFS</a><a class="post-meta__tags" href="/tags/Dijkstra/">Dijkstra</a><a class="post-meta__tags" href="/tags/%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9/">状态压缩</a></div><div class="post_share"><div class="social-share" data-image="https://unpkg.com/fomalhaut1998_picgodemo@latest/img/default_cover_185.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/e57075c7.html"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://unpkg.com/fomalhaut1998_picgodemo@latest/img/default_cover_178.jpg" onerror="onerror=null;src='/assets/r2.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">基环树、拓扑排序和时间戳总结</div></div></a></div><div class="next-post pull-right"><a href="/posts/933bf8f5.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://unpkg.com/fomalhaut1998_picgodemo@latest/img/default_cover_167.jpg" onerror="onerror=null;src='/assets/r2.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">代码模板</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/3efa1ce7.html" title="多源BFS总结"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://unpkg.com/fomalhaut1998_picgodemo@latest/img/default_cover_24.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2022-08-11</div><div class="title">多源BFS总结</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Dijkstra%E7%AE%97%E6%B3%95%EF%BC%88%E4%BC%98%E5%85%88%E7%94%A8%E5%A0%86%E4%BC%98%E5%8C%96%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%EF%BC%89"><span class="toc-text">1.Dijkstra算法（优先用堆优化实现方式）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-01BFS"><span class="toc-text">2.01BFS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-AStar%E7%AE%97%E6%B3%95%EF%BC%88%E5%90%AF%E5%8F%91%E5%BC%8F%E6%90%9C%E7%B4%A2%EF%BC%89"><span class="toc-text">3.AStar算法（启发式搜索）</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-color: transparent;"><div id="footer-wrap"><div class="copyright"><span><b>&copy;2022</b></span><span><b>&nbsp;&nbsp;By Fomalhaut🥝</b></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i><span id="percent">0<span>%</span></span></button></div></div><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><a class="rightMenu-item" href="javascript:window.history.back();" rel="external nofollow noreferrer"><i class="fa fa-arrow-left"></i></a><a class="rightMenu-item" href="javascript:window.history.forward();" rel="external nofollow noreferrer"><i class="fa fa-arrow-right"></i></a><a class="rightMenu-item" href="javascript:window.location.reload();" rel="external nofollow noreferrer"><i class="fa fa-refresh"></i></a><a class="rightMenu-item" href="javascript:rmf.scrollToTop();" rel="external nofollow noreferrer"><i class="fa fa-arrow-up"></i></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:rmf.copySelect();" rel="external nofollow noreferrer"><i class="fa fa-copy"></i><span>复制</span></a><a class="rightMenu-item" href="javascript:window.open(&quot;https://www.baidu.com/s?wd=&quot;+window.getSelection().toString());window.location.reload();" rel="external nofollow noreferrer"><i class="iconfont icon-baidu1"></i><span>百度搜索</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-too"><a class="rightMenu-item" href="javascript:window.open(window.getSelection().toString());window.location.reload();" rel="external nofollow noreferrer"><i class="fa fa-link"></i><span>转到链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-paste"><a class="rightMenu-item" href="javascript:rmf.paste()" rel="external nofollow noreferrer"><i class="fa fa-copy"></i><span>粘贴</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-post"><a class="rightMenu-item" href="#post-comment"><i class="fas fa-comment"></i><span>空降评论</span></a><a class="rightMenu-item" href="javascript:rmf.copyWordsLink()" rel="external nofollow noreferrer"><i class="fa fa-link"></i><span>复制本文地址</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-to"><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()" rel="external nofollow noreferrer"><i class="fa fa-window-restore"></i><span>新窗口打开</span></a><a class="rightMenu-item" id="menu-too" href="javascript:rmf.open()" rel="external nofollow noreferrer"><i class="fa fa-link"></i><span>转到链接</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()" rel="external nofollow noreferrer"><i class="fa fa-copy"></i><span>复制链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-img"><a class="rightMenu-item" href="./#post-comment"><i class="fa fa-download"></i><span>保存图片</span></a><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()" rel="external nofollow noreferrer"><i class="fa fa-window-restore"></i><span>在新窗口打开</span></a><a class="rightMenu-item" href="javascript:rmf.click()" rel="external nofollow noreferrer"><i class="fa fa-arrows-alt"></i><span>全屏显示</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()" rel="external nofollow noreferrer"><i class="fa fa-copy"></i><span>复制图片链接</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" href="javascript:toRandomPost()" rel="external nofollow noreferrer"><i class="fa fa-paper-plane"></i><span>随便逛逛</span></a><a class="rightMenu-item" href="javascript:rmf.switchDarkMode();" rel="external nofollow noreferrer"><i class="fa fa-moon"></i><span>昼夜切换</span></a><a class="rightMenu-item" href="javascript:rmf.translate();" rel="external nofollow noreferrer"><i class="iconfont icon-fanti"></i><span>繁简转换</span></a><a class="rightMenu-item" href="javascript:rmf.switchReadMode();" rel="external nofollow noreferrer"><i class="fa fa-book"></i><span>阅读模式</span></a><a class="rightMenu-item" href="javascript:window.location.href=&quot;/about/&quot;;" rel="external nofollow noreferrer"><i class="fa fa-info-circle"></i><span>版权声明</span></a></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script><script async="async">var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())
+setTimeout(function(){preloader.endLoading();}, 5000);
+document.getElementById('loading-box').addEventListener('click',()=> {preloader.endLoading()})</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://comment.fomal.cc',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://comment.fomal.cc',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script defer src="https://sdk.51.la/perf/js-sdk-perf.min.js" crossorigin="anonymous"></script><script defer src="static/js/51la.js"></script><canvas id="universe"></canvas><script async src="/static/js/universe.js"></script><script async src="/static/js/card_weibo.js"></script><script async src="/static/js/random.js"></script><script async src="/static/js/readPercent.js"></script><script async src="/static/js/bigEmoji.js"></script><script async src="/static/js/changeBg.js"></script><script async src="/static/js/winbox.bundle.min.js"></script><script async src="//npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script><script async src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script defer data-pjax src="/static/js/cat.js"></script><script async src="/static/js/rightmenu.js"></script><script async type="text/javascript" src="/static/js/console.js"></script><script async src="/static/js/title.js"></script><script async src="/static/js/iconfont.js"></script><script async src="/static/js/day.js"></script><script async src="/static/js/lunar.js"></script><script type="text/javascript" src="https://cdn1.tianli0.top/npm/sweetalert2@8.19.0/dist/sweetalert2.all.js"></script><script async src="/static/js/sun_moon.js"></script><script async src="//at.alicdn.com/t/c/font_3586335_5nj7oxp9bqc.js"></script><script async src="//at.alicdn.com/t/c/font_3636804_37rup3ugb9q.js"></script><script async src="//at.alicdn.com/t/c/font_3642746_db7ok3nzpbg.js"></script><script async src="https://cdn1.tianli0.top/npm/vue@2.6.14/dist/vue.min.js"></script><script async src="https://cdn1.tianli0.top/npm/element-ui@2.15.6/lib/index.js"></script><script async src="/static/js/f12.js"></script><script src="//code.tidio.co/3t32opveizex3f0gpkosins3l0ubkxgr.js" async="async"></script><script>function onTidioChatApiReady() {
+  window.tidioChatApi.hide();
+  window.tidioChatApi.on("close", function() {
+    window.tidioChatApi.hide();
+  });
+}
+if (window.tidioChatApi) {
+  window.tidioChatApi.on("ready", onTidioChatApiReady);
+} else {
+  document.addEventListener("tidioChat-ready", onTidioChatApiReady);
+}
+
+var chatBtnFn = () => {
+  document.getElementById("chat_btn").addEventListener("click", function(){
+    window.tidioChatApi.show();
+    window.tidioChatApi.open();
+  });
+}
+chatBtnFn()
+</script><div class="app-refresh" id="app-refresh" style="position: fixed;top: -2.2rem;left: 0;right: 0;z-index: 99999;padding: 0 1rem;font-size: 15px;height: 2.2rem;transition: all 0.3s ease;"><div class="app-refresh-wrap" style=" display: flex;color: #fff;height: 100%;align-items: center;justify-content: center;"><label>✨ 有新文章啦！ 👉</label><a href="javascript:void(0)" rel="external nofollow noreferrer" onclick="location.reload()"><span style="color: #fff;text-decoration: underline;cursor: pointer;">🍗点击食用🍔</span></a></div></div><script>if ('serviceWorker' in navigator) {
+if (navigator.serviceWorker.controller) {
+navigator.serviceWorker.addEventListener('controllerchange', function() {
+showNotification()
+})
+}
+window.addEventListener('load', function() {
+navigator.serviceWorker.register('/sw.js')
+})
+}
+function showNotification() {
+if (GLOBAL_CONFIG.Snackbar) {
+var snackbarBg =
+document.documentElement.getAttribute('data-theme') === 'light' ?
+GLOBAL_CONFIG.Snackbar.bgLight :
+GLOBAL_CONFIG.Snackbar.bgDark
+var snackbarPos = GLOBAL_CONFIG.Snackbar.position
+Snackbar.show({
+text: '✨ 有新文章啦！ 👉',
+backgroundColor: snackbarBg,
+duration: 500000,
+pos: snackbarPos,
+actionText: '🍗点击食用🍔',
+actionTextColor: '#fff',
+onActionClick: function(e) {
+location.reload()
+},
+})
+} else {
+var showBg =
+document.documentElement.getAttribute('data-theme') === 'light' ?
+'#49b1f5' :
+'#1f1f1f'
+var cssText = `top: 0; background: ${showBg};`
+document.getElementById('app-refresh').style.cssText = cssText
+}
+}</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://unpkg.com/fomalhaut1998_picgodemo@latest/img/default_cover_43.jpg);"> <a class="categoryBar-list-link" href="categories/算法/">算法</a><span class="categoryBar-list-count">24</span><span class="categoryBar-list-descr">LeetCode上的算法知识</span></li><li class="categoryBar-list-item" style="background:url(https://unpkg.com/fomalhaut1998_picgodemo@latest/img/default_cover_44.jpg);"> <a class="categoryBar-list-link" href="categories/计算机基础/">计算机基础</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">408四大天书</span></li><li class="categoryBar-list-item" style="background:url(https://unpkg.com/fomalhaut1998_picgodemo@latest/img/default_cover_152.jpg);"> <a class="categoryBar-list-link" href="categories/演示/">演示</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr">渲染效果在网站上的测试</span></li><li class="categoryBar-list-item" style="background:url(https://unpkg.com/fomalhaut1998_picgodemo@latest/img/default_cover_144.jpg);"> <a class="categoryBar-list-link" href="categories/Java基础/">Java基础</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">Java基础知识</span></li><li class="categoryBar-list-item" style="background:url(https://unpkg.com/fomalhaut1998_picgodemo@latest/img/default_cover_105.jpg);"> <a class="categoryBar-list-link" href="categories/数据库/">数据库</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">用来存储巨量数据的系统</span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var qweather_key = '61a7f835d67a45e3841e4656aa457af5';
+  var gaud_map_key = '5dec24fc01339fd3129ad5ba67365d80';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '113.34532,23.15624';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" rel="external nofollow noreferrer" style="margin-inline:5px" data-title="博客框架为Hexo_v6.2.0" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" rel="external nofollow noreferrer" style="margin-inline:5px" data-title="主题版本Butterfly_v4.3.1" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://unpkg.com/" rel="external nofollow noreferrer" style="margin-inline:5px" data-title="本站使用UNPKG为静态资源提供CDN加速" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/CDN-UNPKG-orange?style=flat&amp;logo=jsDelivr" alt=""/></a><a class="github-badge" target="_blank" href="https://vercel.com/" rel="external nofollow noreferrer" style="margin-inline:5px" data-title="本站采用多线部署，默认线路托管于Vercel" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&amp;logo=Vercel" alt=""/></a><a class="github-badge" target="_blank" href="https://dashboard.4everland.org/" rel="external nofollow noreferrer" style="margin-inline:5px" data-title="本站采用多线部署，备用线路1托管于4EVERLAND" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-4EVERLAND-green?style=flat&amp;logo=IPFS" alt=""/></a><a class="github-badge" target="_blank" href="https://app.netlify.com/" rel="external nofollow noreferrer" style="margin-inline:5px" data-title="本站采用多线部署，备用线路2托管于Netlify" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-Netlify-yellowgreen?style=flat&amp;logo=Netlify" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" rel="external nofollow noreferrer" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="/static/js/runtime.min.js"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="posts/546a64f3.html" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://unpkg.com/fomalhaut1998_picgodemo@latest/img/default_cover_152.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-08-09</span><a class="blog-slider__title" href="posts/546a64f3.html" alt="">网页端渲染效果测试</a><div class="blog-slider__text">测试Markdown格式以及外挂标签在网页端的渲染效果</div><a class="blog-slider__button" href="posts/546a64f3.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="posts/63fc9391.html" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://unpkg.com/fomalhaut1998_picgodemo@latest/img/default_cover_79.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-08-11</span><a class="blog-slider__title" href="posts/63fc9391.html" alt="">滑动窗口专题</a><div class="blog-slider__text">这篇文章分享一个滑动窗口的模板，能解决大多数的滑动窗口问题</div><a class="blog-slider__button" href="posts/63fc9391.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="posts/d795dbaa.html" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://unpkg.com/fomalhaut1998_picgodemo@latest/img/default_cover_184.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-08-11</span><a class="blog-slider__title" href="posts/d795dbaa.html" alt="">数位DP总结</a><div class="blog-slider__text">数位DP是一种比较抽象和难理解的DP题型，这篇文章总结数位DP一些思想和解题方法</div><a class="blog-slider__button" href="posts/d795dbaa.html" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="posts/e88c5782.html" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://unpkg.com/fomalhaut1998_picgodemo@latest/img/default_cover_30.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-08-11</span><a class="blog-slider__title" href="posts/e88c5782.html" alt="">单调栈总结</a><div class="blog-slider__text">单调栈的作用是及时弹出没用的元素，用来降低算法的时间复杂度</div><a class="blog-slider__button" href="posts/e88c5782.html" alt="">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><script data-pjax src="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+  function gitcalendar_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 280px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      console.log('已挂载gitcalendar')
+      }
+
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+        gitcalendar_injector_config()
+        GitCalendarInit("https://gitcalendar.fomal.cc/api?fomalhaut1998",['rgb(145, 145, 145, 0.2)', '#c6ecc1', '#a0e2bb', '#1fc7b6', '#70c5d3', '#60a2ce', '#507ac9', '#4356c5', '#423cc4', '#5b3abc', '#7138b6'],'fomalhaut1998')
+    }
+  </script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('blog-slider swiper-container-fade swiper-container-horizontal');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('catalog_magnet');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('article-sort-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__slideInRight');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow_init.js"></script><script async src="/static/js/iconfont.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":320},"mobile":{"show":true},"react":{"opacity":0.9}});</script></body></html>

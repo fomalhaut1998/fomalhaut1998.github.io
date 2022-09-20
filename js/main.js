@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let hideMenuIndex = ''
     if (window.innerWidth < 768) hideMenuIndex = true
-    else hideMenuIndex = blogNameWidth + menusWidth + searchWidth > $nav.offsetWidth - 120
+    // 这行会引起缩放异常，删掉
+    // else hideMenuIndex = blogNameWidth + menusWidth + searchWidth > $nav.offsetWidth - 120
 
     if (hideMenuIndex) {
       $nav.classList.add('hide-menu')

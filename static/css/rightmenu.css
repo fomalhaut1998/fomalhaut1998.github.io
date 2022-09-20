@@ -1,0 +1,59 @@
+/* rightMenu */
+#rightMenu{
+	display: none;
+	position: fixed;
+	width: 160px;
+	height: fit-content;
+	top: 10%;
+	left: 10%;
+	background-color: var(--card-bg);
+	border: 1px solid var(--font-color);
+	border-radius: 8px;
+	z-index: 100;
+}
+#rightMenu .rightMenu-group{
+	padding: 7px 6px;
+}
+#rightMenu .rightMenu-group:not(:nth-last-child(1)){
+	border-bottom: 1px solid var(--font-color);
+}
+#rightMenu .rightMenu-group.rightMenu-small{
+	display: flex;
+	justify-content: space-between;
+}
+#rightMenu .rightMenu-group .rightMenu-item{
+	height: 30px;
+	line-height: 30px;
+	border-radius: 8px;
+	transition: 0.3s;
+	color: var(--font-color);
+}
+#rightMenu .rightMenu-group.rightMenu-line .rightMenu-item{
+	display: flex;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 4px;
+}
+#rightMenu .rightMenu-group .rightMenu-item:hover{
+	background-color: var(--text-bg-hover);
+}
+#rightMenu .rightMenu-group .rightMenu-item i{
+	display: inline-block;
+	text-align: center;
+	line-height: 30px;
+	width: 30px;
+	height: 30px;
+	padding: 0 5px;
+}
+#rightMenu .rightMenu-group .rightMenu-item span{
+	line-height: 30px;
+}
+
+#rightMenu .rightMenu-group.rightMenu-line .rightMenu-item *{
+	height: 40px;
+	line-height: 40px;
+}
+.rightMenu-group.hide{
+	display: none;
+}
+

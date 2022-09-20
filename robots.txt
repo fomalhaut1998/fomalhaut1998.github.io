@@ -1,0 +1,6 @@
+# hexo robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://www.fomal.cc/sitemap.xml
+Sitemap: https://www.fomal.cc/baidusitemap.xml
