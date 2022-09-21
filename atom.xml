@@ -355,9 +355,9 @@
     <category term="算法" scheme="https://www.fomal.cc/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="图" scheme="https://www.fomal.cc/tags/%E5%9B%BE/"/>
-    
     <category term="并查集" scheme="https://www.fomal.cc/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+    
+    <category term="图" scheme="https://www.fomal.cc/tags/%E5%9B%BE/"/>
     
   </entry>
   
