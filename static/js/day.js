@@ -19,7 +19,7 @@ function randomNum(minNum, maxNum) {
             break;
     }
 }
-//纪念日
+// 公祭日
 
 if (m == 9 && dd == 18) {
     console.log("勿忘国耻，振兴中华！\n\n今天是1931年9月18日九一八事变" + (y - 1931).toString() + "周年纪念日！\n=================================================================")
@@ -54,7 +54,7 @@ if (m == 8 && dd == 14) {
     }
 }
 
-//节假日
+// 节假日
 
 if (m == 10 && dd <= 5) {//国庆节
     console.log("祖国" + (y - 1949).toString() + "岁生日快乐！");
@@ -85,7 +85,7 @@ if (m == 3 && dd == 8) {//妇女节
     }
 }
 l = ["震惊！微软让Minecraft Java免费了！", "Minecraft竟然违背Mojang的原则发布2.0！", "非常抱歉，因为不可控原因，博客将于明天停止运营，再见", "好消息，日本没了！", "美国垮了，背后原因竟是时刻心心念念想着祖国的川普！", "微软垮了！"]
-console.log(m, dd);
+// console.log(m, dd);
 if (m == 4 && dd == 1) {//愚人节，随机谎话
     console.log(l[randomNum(0, l.length - 1)]);
     if (sessionStorage.getItem("isPopupWindow") != "1") {
@@ -125,6 +125,22 @@ if (m == 7 && dd == 1) {//建党节
     console.log("中国共产党" + (y - 1921).toString() + "岁生日快乐");
     if (sessionStorage.getItem("isPopupWindow") != "1") {
         Swal.fire("中国共产党" + (y - 1921).toString() + "岁生日快乐");
+        sessionStorage.setItem("isPopupWindow", "1");
+    }
+}
+
+if (m == 8 && dd == 11) {//站长生日
+    console.log("祝站长" + (y - 1998).toString() + "岁生日快乐");
+    if (sessionStorage.getItem("isPopupWindow") != "1") {
+        Swal.fire("祝站长" + (y - 1998).toString() + "岁生日快乐");
+        sessionStorage.setItem("isPopupWindow", "1");
+    }
+}
+
+if (m == 6 && dd == 30) {//小猫咪生日
+    console.log("祝小猫咪" + (y - 1999).toString() + "岁生日快乐");
+    if (sessionStorage.getItem("isPopupWindow") != "1") {
+        Swal.fire("祝小猫咪" + (y - 1999).toString() + "岁生日快乐");
         sessionStorage.setItem("isPopupWindow", "1");
     }
 }

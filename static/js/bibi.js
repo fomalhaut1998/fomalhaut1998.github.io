@@ -17,7 +17,7 @@ function getNew() {
         bibi.removeChild(document.getElementById('more'))
     } catch (error) { }
 
-    bibi.innerHTML += '<div id="loading"><img src="/assets/loading.gif" alt="loading"></div>' // loading图片可以f12在我网站源码下载，也可以使用其他图片。
+    bibi.innerHTML += '<div id="loading"><img src="/assets/loading3.gif" alt="loading"></div>' // loading图片可以f12在我网站源码下载，也可以使用其他图片。
 
     fetch(Url + page).then(res => res.json()).then((res) => {
         total = res.data.total

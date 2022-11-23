@@ -70,7 +70,7 @@ rmf.copyWordsLink = function () {
     txa.select();
     document.execCommand("Copy");
     document.body.removeChild(txa);
-    Swal.fire("复制成功！");
+    // Swal.fire("复制成功！");
 }
 rmf.switchReadMode = function () {
     const $body = document.body
@@ -99,9 +99,9 @@ rmf.copySelect = function () {
 rmf.scrollToTop = function () {
     btf.scrollToDest(0, 500);
 }
-rmf.translate = function () {
-    document.getElementById("translateLink").click();
-}
+// rmf.translate = function () {
+//     document.getElementById("translateLink").click();
+// }
 
 // 右键菜单事件
 document.onkeydown = function (event) {
@@ -115,7 +115,7 @@ document.onkeydown = function (event) {
 function popupMenu() {
     //window.oncontextmenu=function(){return false;}
     window.oncontextmenu = function (event) {
-        console.log(event.keyCode)
+        // console.log(event.keyCode)
         $('.rightMenu-group.hide').hide();
         //如果有文字选中，则显示 文字选中相关的菜单项
         if (document.getSelection().toString()) {

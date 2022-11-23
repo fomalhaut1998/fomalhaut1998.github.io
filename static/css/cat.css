@@ -13,10 +13,10 @@
     background-size: contain;
     transform: translateX(50%);
     cursor: pointer;
-    font-family: ZhuZiAWan_light;
+    font-family: var(--global-font);
     font-weight: 600;
     font-size: 16px;
-    color: #3fa5c4;
+    color: var(--theme-color);
     display: none;
 }
 
