@@ -33,7 +33,6 @@ function setColor(c) {
 
 
 // 控制星空背景特效开关
-// 默认开启星空背景
 if (localStorage.getItem("universe") == undefined) {
   localStorage.setItem("universe", "block");
 }
@@ -54,7 +53,7 @@ function setUniverse() {
 
 // 帧率监测开关
 if (localStorage.getItem("fpson") == undefined) {
-  localStorage.setItem("fpson", "0");
+  localStorage.setItem("fpson", "1");
 }
 function fpssw() {
   if (document.getElementById("fpson").checked) {
@@ -241,7 +240,7 @@ function getPicture() {
     new Vue({
       data: function () {
         this.$notify({
-          title: "提示",
+          title: "可以啦🍨",
           message: "切换自定义背景成功！",
           position: 'top-left',
           offset: 50,
@@ -255,7 +254,7 @@ function getPicture() {
     new Vue({
       data: function () {
         this.$notify({
-          title: "提示",
+          title: "链接不对🤣",
           message: "请输入有效的图片链接！",
           position: 'top-left',
           offset: 50,

@@ -10,17 +10,20 @@ li.categoryBar-list-item {
   display: inline-block;
   height: 200px !important;
   margin: 5px 0.5% 0 0.5% !important;
-  background-image: linear-gradient(rgba(0,0,0,0.4) 25%, rgba(16,16,16,0) 100%);
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.4) 25%,
+    rgba(16, 16, 16, 0) 100%
+  );
   border-radius: 10px;
   padding: 25px 0 25px 25px !important;
-  box-shadow: rgba(50,50,50,0.3) 50px 50px 50px 50px inset;
+  box-shadow: rgba(50, 50, 50, 0.3) 50px 50px 50px 50px inset;
   overflow: hidden;
   background-size: 100% !important;
   background-position: center !important;
 }
 li.categoryBar-list-item:hover {
   background-size: 110% !important;
-  box-shadow: inset 500px 50px 50px 50px rgba(50,50,50,0.6);
+  box-shadow: inset 500px 50px 50px 50px rgba(50, 50, 50, 0.6);
 }
 li.categoryBar-list-item:hover span.categoryBar-list-descr {
   transition: all 0.5s;
@@ -31,12 +34,12 @@ a.categoryBar-list-link {
   font-size: 20px !important;
 }
 a.categoryBar-list-link::before {
-  content: '|' !important;
+  content: "|" !important;
   color: #fff !important;
   font-size: 20px !important;
 }
 a.categoryBar-list-link:after {
-  content: '';
+  content: "";
   position: relative;
   width: 0;
   bottom: 0;
@@ -56,13 +59,13 @@ span.categoryBar-list-count {
   font-size: 20px !important;
 }
 span.categoryBar-list-count::before {
-  content: '\f02d' !important;
+  content: "\f02d" !important;
   padding-right: 15px !important;
   display: inline-block;
   font-weight: 600;
   font-style: normal;
   font-variant: normal;
-  font-family: 'Font Awesome 6 Free';
+  font-family: "Font Awesome 6 Free";
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
 }
