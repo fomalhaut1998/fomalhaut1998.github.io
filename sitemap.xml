@@ -775,20 +775,6 @@
   </url>
   
   <url>
-    <loc>https://www.fomal.cc/tags/%E5%BA%8F%E5%88%97DP/</loc>
-    <lastmod>2022-12-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fomal.cc/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
-    <lastmod>2022-12-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.fomal.cc/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/</loc>
     <lastmod>2022-12-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -810,28 +796,14 @@
   </url>
   
   <url>
-    <loc>https://www.fomal.cc/tags/Dijkstra/</loc>
+    <loc>https://www.fomal.cc/tags/%E5%BA%8F%E5%88%97DP/</loc>
     <lastmod>2022-12-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.fomal.cc/tags/%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9/</loc>
-    <lastmod>2022-12-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fomal.cc/tags/%E6%BB%91%E7%AA%97/</loc>
-    <lastmod>2022-12-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fomal.cc/tags/%E5%8F%8C%E6%8C%87%E9%92%88/</loc>
+    <loc>https://www.fomal.cc/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
     <lastmod>2022-12-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -866,6 +838,27 @@
   </url>
   
   <url>
+    <loc>https://www.fomal.cc/tags/Dijkstra/</loc>
+    <lastmod>2022-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fomal.cc/tags/%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9/</loc>
+    <lastmod>2022-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fomal.cc/tags/%E6%95%B0%E4%BD%8DDP/</loc>
+    <lastmod>2022-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.fomal.cc/tags/%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9DP/</loc>
     <lastmod>2022-12-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -873,7 +866,35 @@
   </url>
   
   <url>
+    <loc>https://www.fomal.cc/tags/%E8%AE%B0%E5%BF%86%E5%8C%96DFS/</loc>
+    <lastmod>2022-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fomal.cc/tags/%E6%BB%91%E7%AA%97/</loc>
+    <lastmod>2022-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fomal.cc/tags/%E5%8F%8C%E6%8C%87%E9%92%88/</loc>
+    <lastmod>2022-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.fomal.cc/tags/%E4%BA%8C%E5%88%86/</loc>
+    <lastmod>2022-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fomal.cc/tags/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/</loc>
     <lastmod>2022-12-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -894,27 +915,6 @@
   </url>
   
   <url>
-    <loc>https://www.fomal.cc/tags/%E6%95%B0%E4%BD%8DDP/</loc>
-    <lastmod>2022-12-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fomal.cc/tags/%E8%AE%B0%E5%BF%86%E5%8C%96DFS/</loc>
-    <lastmod>2022-12-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fomal.cc/tags/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/</loc>
-    <lastmod>2022-12-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.fomal.cc/tags/%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86/</loc>
     <lastmod>2022-12-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -923,6 +923,13 @@
   
   <url>
     <loc>https://www.fomal.cc/tags/%E6%95%B0%E5%AD%A6/</loc>
+    <lastmod>2022-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fomal.cc/tags/%E6%BC%94%E7%A4%BA/</loc>
     <lastmod>2022-12-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -944,13 +951,6 @@
   
   <url>
     <loc>https://www.fomal.cc/tags/Hexo/</loc>
-    <lastmod>2022-12-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fomal.cc/tags/%E6%BC%94%E7%A4%BA/</loc>
     <lastmod>2022-12-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -985,6 +985,13 @@
   </url>
   
   <url>
+    <loc>https://www.fomal.cc/tags/%E5%8D%95%E8%B0%83%E6%A0%88/</loc>
+    <lastmod>2022-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.fomal.cc/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</loc>
     <lastmod>2022-12-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -1007,13 +1014,6 @@
   
   <url>
     <loc>https://www.fomal.cc/tags/%E5%89%8D%E7%BC%80%E5%92%8C/</loc>
-    <lastmod>2022-12-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fomal.cc/tags/%E5%8D%95%E8%B0%83%E6%A0%88/</loc>
     <lastmod>2022-12-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1071,14 +1071,14 @@
   </url>
   
   <url>
-    <loc>https://www.fomal.cc/categories/%E9%AD%94%E6%94%B9%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://www.fomal.cc/categories/%E6%BC%94%E7%A4%BA/</loc>
     <lastmod>2022-12-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.fomal.cc/categories/%E6%BC%94%E7%A4%BA/</loc>
+    <loc>https://www.fomal.cc/categories/%E9%AD%94%E6%94%B9%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2022-12-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
