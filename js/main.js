@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (document.queryCommandSupported && document.queryCommandSupported('copy')) {
         document.execCommand('copy')
         if (GLOBAL_CONFIG.Snackbar !== undefined) {
-          btf.snackbarShow(GLOBAL_CONFIG.copy.success)
+          // btf.snackbarShow(GLOBAL_CONFIG.copy.success)
         } else {
           const prevEle = ctx.previousElementSibling
           prevEle.innerText = GLOBAL_CONFIG.copy.success
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       } else {
         if (GLOBAL_CONFIG.Snackbar !== undefined) {
-          btf.snackbarShow(GLOBAL_CONFIG.copy.noSupport)
+          // btf.snackbarShow(GLOBAL_CONFIG.copy.noSupport)
         } else {
           ctx.previousElementSibling.innerText = GLOBAL_CONFIG.copy.noSupport
         }
@@ -469,11 +469,11 @@ document.addEventListener('DOMContentLoaded', function () {
       if (nowMode === 'light') {
         activateDarkMode()
         saveToLocal.set('theme', 'dark', 2)
-        GLOBAL_CONFIG.Snackbar !== undefined && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night)
+        // GLOBAL_CONFIG.Snackbar !== undefined && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night)
       } else {
         activateLightMode()
         saveToLocal.set('theme', 'light', 2)
-        GLOBAL_CONFIG.Snackbar !== undefined && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.night_to_day)
+        // GLOBAL_CONFIG.Snackbar !== undefined && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.night_to_day)
       }
       // handle some cases
       typeof utterancesTheme === 'function' && utterancesTheme()

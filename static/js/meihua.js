@@ -128,7 +128,7 @@ function setBlurNum() {
   var elem = document.getElementById("blurSet");
   var newBlur = elem.value;
   var target = document.querySelector('.blurValue');
-  target.innerHTML = "模糊半径 (开启模糊效果才有效 0px-50px): " + newBlur + "px";
+  target.innerHTML = "模糊半径 (开启模糊生效 0px-50px): " + newBlur + "px";
   localStorage.setItem("blurRad", newBlur);
   curBlur = newBlur;
   miniBlur = curBlur * 2 * 0.95;
@@ -226,8 +226,12 @@ function changeBg(s) {
 }
 
 
-// 切换链接对应的背景(加入了检验)
+// 切换链接对应的背景(加入了链接检验与防抖)
 function getPicture() {
+  debounce(getPicture_, 500);
+}
+
+function getPicture_() {
   let bg = document.getElementById("web_bg");
   checkImgExists(document.getElementById("pic-link").value).then(() => {
     // 有效的图片链接
@@ -245,7 +249,8 @@ function getPicture() {
           position: 'top-left',
           offset: 50,
           showClose: true,
-          type: "success"
+          type: "success",
+          duration: 5000
         });
       }
     })
@@ -259,7 +264,8 @@ function getPicture() {
           position: 'top-left',
           offset: 50,
           showClose: true,
-          type: "warning"
+          type: "warning",
+          duration: 5000
         });
       }
     })
@@ -312,10 +318,12 @@ if (localStorage.getItem("light") == undefined) {
   localStorage.setItem("light", true);
 }
 if (localStorage.getItem("light") == "true") {
+  clearInterval(clk);
   clk = setInterval(changeLightColor, 1200);
 }
 function setLight() {
   if (document.getElementById("lightSet").checked) {
+    clearInterval(clk);
     clk = setInterval(changeLightColor, 1200);
     localStorage.setItem("light", "true");
   } else {
@@ -393,7 +401,7 @@ function createWinbox() {
 <div class="settings" style="display: block;">
 <div id="article-container" style="padding:12px;">
 <br>
-<center><p><button onclick="reset()" style="background:linear-gradient(to right, #114357, #f29492);display:block;width:40%;padding: 15px 0;border-radius:6px;color:white;"><i class="fa-solid fa-arrows-rotate"></i>点这里恢复默认设置</button></p></center>
+<center><p><button onclick="reset()" style="background:linear-gradient(to right, #fc354c, #0abfbc);display:block;width:40%;padding: 15px 0;border-radius:8px;color:white;"><i class="fa-solid fa-arrows-rotate"></i>点这里恢复默认设置</button></p></center>
 
 <h2>一、显示偏好</h2>
 
@@ -426,10 +434,10 @@ function createWinbox() {
 </div>
 
 <h2>二、字体设置</h2>
-<div class="note warning simple"><p>注意：非商免字体未经授权只能个人使用。本站为完全非商业、非盈利性质的网站，平时用于个人学习交流，站长不会由此获利一分钱，如涉及侵权请联系站长删除，谢谢！ —— 致版权方</p>
+<div class="note warning modern"><p>注意：非商免字体未经授权只能个人使用。本站为完全非商业、非盈利性质的网站，平时用于个人学习交流，如有侵权请联系站长删除，谢谢！ —— 致版权方</p>
 </div>
 <p id="swfs">
-<a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'ZhuZiAWan'!important;color:black" onclick="setFont('ZhuZiAWan_light')">筑紫A丸ゴシック</a>
+<a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'ZhuZiAWan'!important;color:black" onclick="setFont('ZhuZiAWan')">筑紫A丸标准体2.0</a>
 <a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'HYTMR'!important;color:black" onclick="setFont('HYTMR')">汉仪唐美人</a>
 <a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'LXGW'!important;color:black" onclick="setFont('LXGW')">霞鹜文楷</a>
 <a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'TTQHB'!important;color:black" onclick="setFont('TTQHB')">甜甜圈海报</a>
@@ -455,40 +463,40 @@ function createWinbox() {
 <h2>四、背景设置</h2>
 <center><button onclick="resetBg()" style="background:var(--theme-color);display:block;width:20%;padding: 15px 0;border-radius:6px;color:white;"><i class="fa-solid fa-arrows-rotate"></i>点这里恢复默认背景</button></center>
 
-<h3>1.二次元</h3>
-<details class="folding-tag" blue><summary> 查看二次元背景 </summary>
+<h3>1. 二次元</h3>
+<details class="folding-tag" cyan><summary> 查看二次元背景 </summary>
               <div class='content'>
               <div class="bgbox"><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/home_bg.webp)" class="imgbox" onclick="changeBg('url(https\://source.fomal.cc/img/home_bg.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/dm15.webp)" class="imgbox" onclick="changeBg('url(https\://source.fomal.cc/img/dm15.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/dm2.webp)" class="imgbox" onclick="changeBg('url(https\://source.fomal.cc/img/dm2.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/dm14.webp)" class="imgbox" onclick="changeBg('url(https\://source.fomal.cc/img/dm14.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/dm8.webp)" class="imgbox" onclick="changeBg('url(https\://source.fomal.cc/img/dm8.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/dm9.webp)" class="imgbox" onclick="changeBg('url(https\://source.fomal.cc/img/dm9.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/dm11.webp)" class="imgbox" onclick="changeBg('url(https\://source.fomal.cc/img/dm11.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/dm12.webp)" class="imgbox" onclick="changeBg('url(https\://source.fomal.cc/img/dm12.webp)')"></a></div>
               </div>
             </details>
 
 
-<h3>2.风景</h3>
+<h3>2. 风景</h3>
 
-<details class="folding-tag" blue><summary> 查看风景背景 </summary>
+<details class="folding-tag" cyan><summary> 查看风景背景 </summary>
               <div class='content'>
               <div class="bgbox"><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/fj1.webp)" class="imgbox" onclick="changeBg('url(https://source.fomal.cc/img/fj1.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/fj2.webp)" class="imgbox" onclick="changeBg('url(https://source.fomal.cc/img/fj2.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/fj3.webp)" class="imgbox" onclick="changeBg('url(https://source.fomal.cc/img/fj3.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/fj4.webp)" class="imgbox" onclick="changeBg('url(https://source.fomal.cc/img/fj4.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/fj5.webp)" class="imgbox" onclick="changeBg('url(https://source.fomal.cc/img/fj5.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/fj6.webp)" class="imgbox" onclick="changeBg('url(https://source.fomal.cc/img/fj6.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/fj7.webp)" class="imgbox" onclick="changeBg('url(https://source.fomal.cc/img/fj7.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/fj8.webp)" class="imgbox" onclick="changeBg('url(https://source.fomal.cc/img/fj8.webp)')"></a></div>
               </div>
             </details>
 
-<h3>3.萌宠</h3>
+<h3>3. 萌宠</h3>
 
-<details class="folding-tag" blue><summary> 查看萌宠背景 </summary>
+<details class="folding-tag" cyan><summary> 查看萌宠背景 </summary>
               <div class='content'>
               <div class="bgbox"><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/mc1.webp)" class="imgbox" onclick="changeBg('url(https://source.fomal.cc/img/mc1.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/mc2.webp)" class="imgbox" onclick="changeBg('url(https://source.fomal.cc/img/mc2.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/mc3.webp)" class="imgbox" onclick="changeBg('url(https://source.fomal.cc/img/mc3.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/mc4.webp)" class="imgbox" onclick="changeBg('url(https://source.fomal.cc/img/mc4.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/mc5.webp)" class="imgbox" onclick="changeBg('url(https://source.fomal.cc/img/mc5.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/mc6.webp)" class="imgbox" onclick="changeBg('url(https://source.fomal.cc/img/mc6.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/mc7.webp)" class="imgbox" onclick="changeBg('url(https://source.fomal.cc/img/mc7.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/mc8.webp)" class="imgbox" onclick="changeBg('url(https://source.fomal.cc/img/mc8.webp)')"></a></div>
               </div>
             </details>
 
-<h3>4.渐变色</h3>
-<details class="folding-tag" blue><summary> 查看渐变色背景 </summary>
+<h3>4. 渐变色</h3>
+<details class="folding-tag" cyan><summary> 查看渐变色背景 </summary>
               <div class='content'>
               <div class="bgbox"><a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to right, #544a7d, #ffd452)" onclick="changeBg('linear-gradient(to right, #544a7d, #ffd452)')"></a><a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4)" onclick="changeBg('linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4)')"></a><a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to left, #654ea3, #eaafc8)" onclick="changeBg('linear-gradient(to left, #654ea3, #eaafc8)')"></a><a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to top, #feac5e, #c779d0, #4bc0c8)" onclick="changeBg('linear-gradient(to top, #feac5e, #c779d0, #4bc0c8)')"></a><a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to top, #d3959b, #bfe6ba)" onclick="changeBg('linear-gradient(to top, #d3959b, #bfe6ba)')"></a><a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to top, #8360c3, #2ebf91)" onclick="changeBg('linear-gradient(to top, #8360c3, #2ebf91)')"></a><a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to top, #108dc7, #ef8e38)" onclick="changeBg('linear-gradient(to top, #108dc7, #ef8e38)')"></a><a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to top, #355c7d, #6c5b7b, #c06c84)" onclick="changeBg('linear-gradient(to top, #355c7d, #6c5b7b, #c06c84)')"></a></div>
               </div>
             </details>
 
 
-<h3>5.纯色</h3>
-<details class="folding-tag" blue><summary> 查看纯色背景 </summary>
+<h3>5. 纯色</h3>
+<details class="folding-tag" cyan><summary> 查看纯色背景 </summary>
               <div class='content'>
               <div class="bgbox"><a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #ecb1b1" onclick="changeBg('#ecb1b1')"></a> <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #d3ebac" onclick="changeBg('#d3ebac')"></a> <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #ace9ce" onclick="changeBg('#ace9ce')"></a><a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #c1ebea" onclick="changeBg('#c1ebea')"></a> <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #dee7f1" onclick="changeBg('#dee7f1')"></a> <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #e9e3f2" onclick="changeBg('#e9e3f2')"></a> <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #f7eff5" onclick="changeBg('#f7eff5')"></a>  <input type="color" id="colors" href="javascript:;" rel="noopener external nofollow" class="box" autocomplete="on" value="${defineColor}" oninput="changeBgColor()"></input></div>
               </div>
@@ -496,18 +504,18 @@ function createWinbox() {
 
 
 
-<h3>6.适配手机</h3>
-<details class="folding-tag" blue><summary> 查看适配手机的背景 </summary>
+<h3>6. 适配手机</h3>
+<details class="folding-tag" cyan><summary> 查看适配手机的背景 </summary>
               <div class='content'>
               <div class="bgbox"><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/mb4.webp)" class="pimgbox" onclick="changeBg('url(https\://source.fomal.cc/img/mb4.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/mb5.webp)" class="pimgbox" onclick="changeBg('url(https\://source.fomal.cc/img/mb5.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/mb6.webp)" class="pimgbox" onclick="changeBg('url(https\://source.fomal.cc/img/mb6.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/mb7.webp)" class="pimgbox" onclick="changeBg('url(https\://source.fomal.cc/img/mb7.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/mb8.webp)" class="pimgbox" onclick="changeBg('url(https\://source.fomal.cc/img/mb8.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/mb9.webp)" class="pimgbox" onclick="changeBg('url(https\://source.fomal.cc/img/mb9.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/mb16.webp)" class="pimgbox" onclick="changeBg('url(https\://source.fomal.cc/img/mb16.webp)')"></a><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://source.fomal.cc/img/mb19.webp)" class="pimgbox" onclick="changeBg('url(https\://source.fomal.cc/img/mb19.webp)')"></a></div>
               </div>
             </details>
 
 
-<h3>7.自定义背景</h3>
-<details class="folding-tag" blue><summary> 设置自定义背景 </summary>
+<h3>7. 自定义背景</h3>
+<details class="folding-tag" cyan><summary> 设置自定义背景 </summary>
               <div class='content'>
-              <p><center><input type="text" id="pic-link" size="70%" maxlength="1000" style="padding: 5px 5px 5px 5px;border-radius:6px;line-height:2;" placeholder="请输入有效的图片链接，如 https://source.fomal.cc/img/home_bg.webp"></center></p><p><center><button type="button" onclick="getPicture()" style="background:var(--theme-color);width:20%;padding: 5px 0px 5px 0px;border-radius:6px;color:white;line-height:2.5;">🌈切换链接背景</button></center></p>
+              <p><center><input type="text" id="pic-link" size="70%" maxlength="1000" style="padding: 5px 5px 5px 5px;border-radius:6px;line-height:2;" placeholder="请输入有效的图片链接，如 https://source.fomal.cc/img/home_bg.webp"></center></p><p><center><button type="button" onclick="getPicture()" style="background:var(--theme-color);width:20%;padding: 5px 0px 5px 0px;border-radius:6px;color:white;line-height:2.5;">🌈切换链接背景🌈</button></center></p>
               </div>
             </details>
 
@@ -568,11 +576,15 @@ function reset() {
 
 // 适应窗口大小
 function winResize() {
-  var offsetWid = document.documentElement.clientWidth;
-  if (offsetWid <= 768) {
-    winbox.resize(offsetWid * 0.95 + "px", "90%").move("center", "center");
-  } else {
-    winbox.resize(offsetWid * 0.6 + "px", "70%").move("center", "center");
+  try {
+    var offsetWid = document.documentElement.clientWidth;
+    if (offsetWid <= 768) {
+      winbox.resize(offsetWid * 0.95 + "px", "90%").move("center", "center");
+    } else {
+      winbox.resize(offsetWid * 0.6 + "px", "70%").move("center", "center");
+    }
+  } catch (err) {
+    console.log("Pjax毒瘤抽风运行winResize方法🙄🙄🙄");
   }
 }
 
@@ -584,5 +596,3 @@ function toggleWinbox() {
     createWinbox();
   };
 }
-
-

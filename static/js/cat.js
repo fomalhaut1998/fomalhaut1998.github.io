@@ -32,7 +32,7 @@ if (document.body.clientWidth > 992) {
                 z_index: 9999,
                 zoom: 0.9,
                 borderRadius: 5 + 'px',
-                right: 60 + 'px',
+                right: 62 + 'px',
                 nekoImg: "https://bu.dusays.com/2022/07/20/62d812db74be9.png",
                 hoverMsg: "喵喵喵~",
                 color: "#6f42c1",
