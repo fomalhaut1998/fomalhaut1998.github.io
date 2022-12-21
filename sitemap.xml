@@ -11,33 +11,6 @@
   </url>
   
   <url>
-    <loc>https://www.fomal.cc/site/time/index.html</loc>
-    
-    <lastmod>2022-12-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fomal.cc/social/fcircle/index.html</loc>
-    
-    <lastmod>2022-12-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fomal.cc/social/link/index.html</loc>
-    
-    <lastmod>2022-12-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.fomal.cc/manifest.json</loc>
     
     <lastmod>2022-12-21</lastmod>
@@ -129,6 +102,33 @@
   
   <url>
     <loc>https://www.fomal.cc/site/census/index.html</loc>
+    
+    <lastmod>2022-12-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fomal.cc/site/time/index.html</loc>
+    
+    <lastmod>2022-12-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fomal.cc/social/fcircle/index.html</loc>
+    
+    <lastmod>2022-12-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fomal.cc/social/link/index.html</loc>
     
     <lastmod>2022-12-21</lastmod>
     
