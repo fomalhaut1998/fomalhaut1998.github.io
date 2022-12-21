@@ -1,13 +1,1 @@
-// 随便逛逛
-// 发现有时会和当前页面重复，加一个判断
-function randomPost() {
-    fetch('/baidusitemap.xml').then(res => res.text()).then(str => (new window.DOMParser()).parseFromString(str, "text/xml")).then(data => {
-        let ls = data.querySelectorAll('url loc');
-        while (true) {
-            let url = ls[Math.floor(Math.random() * ls.length)].innerHTML;
-            if (location.href == url) continue;
-            location.href = url;
-            return;
-        }
-    })
-}
+function randomPost(){fetch("/baidusitemap.xml").then((t=>t.text())).then((t=>(new window.DOMParser).parseFromString(t,"text/xml"))).then((t=>{let e=t.querySelectorAll("url loc");for(;;){let t=e[Math.floor(Math.random()*e.length)].innerHTML;if(location.href!=t)return void(location.href=t)}}))}
