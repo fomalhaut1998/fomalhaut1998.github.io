@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.fomal.cc/posts/d1927166.html</loc>
-    
-    <lastmod>2023-01-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.fomal.cc/tags/index.html</loc>
     
     <lastmod>2023-01-03</lastmod>
@@ -30,6 +21,24 @@
   
   <url>
     <loc>https://www.fomal.cc/categories/index.html</loc>
+    
+    <lastmod>2023-01-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fomal.cc/box/animation/index.html</loc>
+    
+    <lastmod>2023-01-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fomal.cc/box/gallery/index.html</loc>
     
     <lastmod>2023-01-03</lastmod>
     
@@ -137,6 +146,105 @@
   </url>
   
   <url>
+    <loc>https://www.fomal.cc/box/gallery/photo/index.html</loc>
+    
+    <lastmod>2023-01-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fomal.cc/box/gallery/photo/p10.html</loc>
+    
+    <lastmod>2023-01-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fomal.cc/box/gallery/photo/p11.html</loc>
+    
+    <lastmod>2023-01-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fomal.cc/box/gallery/photo/p12.html</loc>
+    
+    <lastmod>2023-01-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fomal.cc/box/gallery/photo/p13.html</loc>
+    
+    <lastmod>2023-01-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fomal.cc/box/gallery/photo/p15.html</loc>
+    
+    <lastmod>2023-01-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fomal.cc/box/gallery/photo/p14.html</loc>
+    
+    <lastmod>2023-01-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fomal.cc/box/gallery/photo/p16.html</loc>
+    
+    <lastmod>2023-01-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fomal.cc/box/gallery/photo/p17.html</loc>
+    
+    <lastmod>2023-01-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fomal.cc/box/gallery/photo/p2.html</loc>
+    
+    <lastmod>2023-01-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fomal.cc/box/gallery/photo/p3.html</loc>
+    
+    <lastmod>2023-01-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.fomal.cc/box/gallery/photo/p4.html</loc>
     
     <lastmod>2023-01-03</lastmod>
@@ -227,115 +335,7 @@
   </url>
   
   <url>
-    <loc>https://www.fomal.cc/box/animation/index.html</loc>
-    
-    <lastmod>2023-01-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fomal.cc/box/gallery/index.html</loc>
-    
-    <lastmod>2023-01-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fomal.cc/box/gallery/photo/index.html</loc>
-    
-    <lastmod>2023-01-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fomal.cc/box/gallery/photo/p10.html</loc>
-    
-    <lastmod>2023-01-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fomal.cc/box/gallery/photo/p11.html</loc>
-    
-    <lastmod>2023-01-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fomal.cc/box/gallery/photo/p12.html</loc>
-    
-    <lastmod>2023-01-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fomal.cc/box/gallery/photo/p13.html</loc>
-    
-    <lastmod>2023-01-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fomal.cc/box/gallery/photo/p14.html</loc>
-    
-    <lastmod>2023-01-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fomal.cc/box/gallery/photo/p15.html</loc>
-    
-    <lastmod>2023-01-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fomal.cc/box/gallery/photo/p16.html</loc>
-    
-    <lastmod>2023-01-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fomal.cc/box/gallery/photo/p17.html</loc>
-    
-    <lastmod>2023-01-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fomal.cc/box/gallery/photo/p2.html</loc>
-    
-    <lastmod>2023-01-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fomal.cc/box/gallery/photo/p3.html</loc>
+    <loc>https://www.fomal.cc/posts/d1927166.html</loc>
     
     <lastmod>2023-01-03</lastmod>
     
