@@ -1,1 +1,0 @@
-function searchSize(){if(document.body.clientWidth>768)return;let e=document.querySelector("#algolia-hits");e.addEventListener("DOMNodeInserted",(()=>{e.children[0].style.maxHeight=document.documentElement.clientHeight-210+"px"}))}searchSize(),window.addEventListener("resize",searchSize);

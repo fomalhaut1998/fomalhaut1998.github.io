@@ -1,1 +1,0 @@
-function randomPost(){fetch("/baidusitemap.xml").then((t=>t.text())).then((t=>(new window.DOMParser).parseFromString(t,"text/xml"))).then((t=>{let e=t.querySelectorAll("url loc");for(;;){let t=e[Math.floor(Math.random()*e.length)].innerHTML;if(location.href!=t)return void(location.href=t)}}))}
