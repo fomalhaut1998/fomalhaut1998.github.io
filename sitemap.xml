@@ -164,7 +164,7 @@
   </url>
   
   <url>
-    <loc>https://www.fomal.cc/box/gallery/photo/p11.html</loc>
+    <loc>https://www.fomal.cc/box/gallery/photo/p12.html</loc>
     
     <lastmod>2023-08-13</lastmod>
     
@@ -173,7 +173,7 @@
   </url>
   
   <url>
-    <loc>https://www.fomal.cc/box/gallery/photo/p12.html</loc>
+    <loc>https://www.fomal.cc/box/gallery/photo/p11.html</loc>
     
     <lastmod>2023-08-13</lastmod>
     
@@ -263,7 +263,7 @@
   </url>
   
   <url>
-    <loc>https://www.fomal.cc/box/gallery/photo/p7.html</loc>
+    <loc>https://www.fomal.cc/box/gallery/photo/p6.html</loc>
     
     <lastmod>2023-08-13</lastmod>
     
@@ -272,7 +272,7 @@
   </url>
   
   <url>
-    <loc>https://www.fomal.cc/box/gallery/photo/p6.html</loc>
+    <loc>https://www.fomal.cc/box/gallery/photo/p7.html</loc>
     
     <lastmod>2023-08-13</lastmod>
     
@@ -808,6 +808,13 @@
   </url>
   
   <url>
+    <loc>https://www.fomal.cc/tags/%E4%BA%8C%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C/</loc>
+    <lastmod>2023-08-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.fomal.cc/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/</loc>
     <lastmod>2023-08-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -823,13 +830,6 @@
   
   <url>
     <loc>https://www.fomal.cc/tags/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</loc>
-    <lastmod>2023-08-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fomal.cc/tags/%E4%BA%8C%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C/</loc>
     <lastmod>2023-08-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
