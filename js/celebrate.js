@@ -1,0 +1,19 @@
+/*!
+ * celebrate.js —— 全屏礼炮 / 烟花（只给「喜庆节日」用）
+ * ==================================================================
+ * 平时根本不加载：festival.js 判断出喜庆节日命中的那一刻，才动态插入这个脚本，
+ * 所以平常的日子一个字节都不下载。
+ *
+ * 用法（一般不用手写，festival.js 会自动调）：
+ *   fomalCelebrate()                         默认暖色
+ *   fomalCelebrate({ colors: ['#ff4d4f'] })  指定配色
+ *   fomalCelebrate.stop()                    立即收工（调试用）
+ *
+ * 设计约束：
+ *   · canvas 铺满全屏 + pointer-events:none，不挡任何点击
+ *   · z-index 9998，排在通知卡片（9999）下面，卡片文字始终看得清
+ *   · 同一时间只跑一段动画；画完自动移除 canvas、resize 监听
+ *   · 像素比最高按 2 渲染，粒子上限约 500，低端机也不卡
+ *   · 系统开了「减少动态效果」(prefers-reduced-motion) 时直接不播放
+ */
+!function(e){"use strict";var t=["#ffd166","#ff6b6b","#4dabf7","#b197fc","#69db7c","#ffa94d"],n=!1;function o(){return e.performance&&e.performance.now?e.performance.now():Date.now()}function r(t){return e.requestAnimationFrame?e.requestAnimationFrame(t):e.setTimeout(t,16)}function a(i){if(n)return!1;if("undefined"==typeof document||!document.createElement)return!1;if(function(){try{return!(!e.matchMedia||!e.matchMedia("(prefers-reduced-motion: reduce)").matches)}catch(e){return!1}}())return!1;var l=document.body||document.documentElement;if(!l)return!1;var d=i&&i.colors&&i.colors.length?i.colors:t,c=Math.min(2,e.devicePixelRatio||1),h=document.createElement("canvas");h.setAttribute("aria-hidden","true"),h.style.cssText="position:fixed;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:9998;opacity:1;transition:opacity .45s linear",l.appendChild(h);var m=h.getContext&&h.getContext("2d");if(!m)return l.removeChild(h),!1;n=!0;var f=0,u=0;function s(){f=h.clientWidth||e.innerWidth||0,u=h.clientHeight||e.innerHeight||0,h.width=Math.round(f*c),h.height=Math.round(u*c),v=1*u,y=.36*u,m.setTransform(c,0,0,c,0,0),m.globalCompositeOperation="lighter",m.lineCap="round"}s();var p,v=900,y=378,x=o(),g=x,M=0,b=!1,C=[],w=[];function A(){return d[Math.random()*d.length|0]}for(p=0;p<8;p++)w.push({at:100+540*p+300*Math.random(),x:f*(.16+.68*Math.random()),y:u+6,vx:(Math.random()-.5)*f*.06,vy:-u*(.86+.34*Math.random()),color:A()});function T(e,t,n){C.push({flash:1,x:e,y:t,life:.42,max:.42,r:86,color:n});for(var o=0;o<104;o++){var r=Math.random()*Math.PI*2,a=u*(.16+.5*Math.random()),i=1.5+.9*Math.random();C.push({x:e,y:t,px:e,py:t,vx:Math.cos(r)*a,vy:Math.sin(r)*a*.92,life:i,max:i,w:1.9+1.7*Math.random(),color:Math.random()<.72?n:A()})}}function P(){b||(b=!0,function(t){t&&(e.cancelAnimationFrame?e.cancelAnimationFrame(t):e.clearTimeout(t))}(M),e.removeEventListener("resize",s),h.style.opacity="0",e.setTimeout((function(){h.parentNode&&h.parentNode.removeChild(h),n=!1}),500))}return a.stop=P,e.addEventListener("resize",s),M=r((function e(){var t=o(),n=Math.min(.05,(t-g)/1e3);g=t;var a=t-x;for(m.clearRect(0,0,f,u),p=w.length-1;p>=0;p--){var i=w[p];a<i.at||(i.vy+=v*n,i.x+=i.vx*n,i.y+=i.vy*n,m.globalAlpha=.9,m.strokeStyle=i.color,m.lineWidth=2.8,m.beginPath(),m.moveTo(i.x-.028*i.vx,i.y-.028*i.vy),m.lineTo(i.x,i.y),m.stroke(),(i.vy>=0||i.y<=.16*u)&&(T(i.x,i.y,i.color),w.splice(p,1)))}for(p=C.length-1;p>=0;p--){var l=C[p];if(l.life-=n,l.life<=0)C.splice(p,1);else if(l.flash){var d=1-l.life/l.max,c=l.r*(.35+d),h=m.createRadialGradient(l.x,l.y,0,l.x,l.y,c);h.addColorStop(0,"rgba(255,255,255,"+(.6*(1-d)).toFixed(3)+")"),h.addColorStop(1,"rgba(255,255,255,0)"),m.globalAlpha=1,m.fillStyle=h,m.beginPath(),m.arc(l.x,l.y,c,0,2*Math.PI),m.fill()}else{l.px=l.x,l.py=l.y;var s=Math.exp(-.85*n);l.vx*=s,l.vy=l.vy*s+y*n,l.x+=l.vx*n,l.y+=l.vy*n,m.globalAlpha=Math.max(0,Math.min(1,l.life/l.max)),m.strokeStyle=l.color,m.lineWidth=l.w,m.beginPath(),m.moveTo(l.px,l.py),m.lineTo(l.x,l.y),m.stroke()}}m.globalAlpha=1,a<7600&&(C.length||w.length)?M=r(e):P()})),!0}e.fomalCelebrate=a,"undefined"!=typeof module&&module.exports&&(module.exports=a)}(window);
