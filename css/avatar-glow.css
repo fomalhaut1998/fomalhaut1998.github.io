@@ -1,0 +1,36 @@
+@charset "UTF-8";/*!
+ * 头像呼吸灯 · 跟随主题色（avatar-glow.css）
+ * ============================================================================
+ * 改的是什么
+ *   全站 .avatar-img 的呼吸灯动画。主题里这两条写死在
+ *   themes/fomalhaut/source/css/_custom/custom.css:1442-1470：
+ *     [data-theme="light"] .avatar-img { animation: huxi_light 4s ease-in-out infinite }
+ *     [data-theme="dark"]  .avatar-img { animation: huxi_dark  4s ease-in-out infinite }
+ *     @keyframes huxi_light { 0%/100% { box-shadow: 0 0 1px 1px #9ff2d2 } 50% { box-shadow: 0 0 5px 5px #9ff2d2 } }
+ *     @keyframes huxi_dark  { 结构同上，颜色 #39c5bb }
+ *   两个颜色都是硬编码的：默认主题色恰好也是 #39c5bb，所以深色看着还行；一旦在右下角
+ *   美化面板换成别的主题色，呼吸灯还是原来的绿/薄荷，跟主题对不上。
+ *
+ * 为什么是「新增文件」而不是改主题
+ *   @keyframes 是「同名取文档顺序里最后一条」生效的，只要在主题样式之后重新声明同名
+ *   @keyframes 就能覆盖，完全不用动 themes/ 下的 custom.css。本文件因此放在
+ *   inject.head 里 /css/site-inject.css 之后（主题 /css/index.css 是最前一条）。
+ *
+ * 引入了什么
+ *   · --ag-ring / --ag-halo 两个变量，从 var(--theme-color) 派生：浅色往白里调
+ *     （压在白卡片上才看得见），深色直接用原色。
+ *   · @keyframes 里每个 var() 都带兜底值 —— 不支持 color-mix() 的老浏览器会让自定义
+ *     属性变成 guaranteed-invalid，var() 自动回落，整套 box-shadow 不会因此失效，
+ *     观感退回原来的 #9ff2d2 / #39c5bb。
+ *   · 峰值从原来一层紧贴光晕，扩成「紧贴环 + 外围柔光」两层：110px 的电脑端作者卡
+ *     和 96px 的手机抽屉头像都更像"呼吸灯"，而不是一圈描边。
+ *   · 时长/缓动维持主题的 4s ease-in-out infinite，节奏不变。
+ *
+ * 影响范围
+ *   所有 .avatar-img：#aside-content 作者卡、#sidebar-menus 手机抽屉头像。
+ *   （手机抽屉的尺寸/圆角/白边仍归 /css/mobile-drawer.css，动画共用这一套。）
+ *
+ * 回滚
+ *   删掉 _config.fomalhaut.yml inject.head 里那行 <link>，呼吸灯立刻变回主题写死的颜色。
+ *   配置备份：bak/20261007-avatar-glow/before/_config.fomalhaut.yml
+ * ========================================================================== */:root{--ag-ring:#9ff2d2;--ag-ring:color-mix(in srgb, var(--theme-color, #39c5bb) 58%, #ffffff);--ag-halo:rgba(57, 197, 187, 0.3);--ag-halo:color-mix(in srgb, var(--theme-color, #39c5bb) 30%, transparent)}[data-theme=dark]{--ag-ring:#39c5bb;--ag-ring:var(--theme-color, #39c5bb);--ag-halo:rgba(57, 197, 187, 0.42);--ag-halo:color-mix(in srgb, var(--theme-color, #39c5bb) 42%, transparent)}@keyframes huxi_light{0%,100%{box-shadow:0 0 1px 1px var(--ag-ring,#9ff2d2),0 0 6px 1px var(--ag-halo,rgba(57,197,187,.3))}50%{box-shadow:0 0 5px 5px var(--ag-ring,#9ff2d2),0 0 18px 7px var(--ag-halo,rgba(57,197,187,.3))}}@keyframes huxi_dark{0%,100%{box-shadow:0 0 1px 1px var(--ag-ring,#39c5bb),0 0 6px 1px var(--ag-halo,rgba(57,197,187,.42))}50%{box-shadow:0 0 5px 5px var(--ag-ring,#39c5bb),0 0 18px 7px var(--ag-halo,rgba(57,197,187,.42))}}@media (prefers-reduced-motion:reduce){[data-theme=light] .avatar-img{animation:none!important;box-shadow:0 0 5px 5px var(--ag-ring,#9ff2d2),0 0 18px 7px var(--ag-halo,rgba(57,197,187,.3))}[data-theme=dark] .avatar-img{animation:none!important;box-shadow:0 0 5px 5px var(--ag-ring,#39c5bb),0 0 18px 7px var(--ag-halo,rgba(57,197,187,.42))}}
