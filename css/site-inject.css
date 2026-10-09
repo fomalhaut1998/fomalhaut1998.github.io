@@ -595,3 +595,26 @@ html[data-rm="off"] #rightside button:has(> i.fa-mouse)::after{content:"";positi
   }
 }
 */
+
+/* 背景滤镜：仅面板内生效，原生滑条本身有 44px 触摸区域。 */
+.settings .bf-panel { margin:18px 10px 24px; max-width:600px; padding:20px; border:1px solid rgba(128,128,128,.25); border-radius:16px; }
+.settings .bf-heading,.settings .bf-value-row { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.settings .bf-heading { font-weight:700; }
+.settings .bf-heading input { margin:0; flex-shrink:0; }
+.settings .bf-hint { margin:8px 0 18px; font-size:.8em; opacity:.8; line-height:1.6; }
+.settings .bf-control { margin:18px 0; }
+.settings .bf-value-row>label { font-weight:600; }
+.settings .bf-number { display:flex; align-items:center; gap:8px; }
+.settings .bf-panel .bf-number input { box-sizing:border-box; width:76px; height:44px; margin:0; padding:6px 8px; border:1px solid rgba(128,128,128,.45); border-radius:8px; background:rgba(128,128,128,.08); color:inherit; font:inherit; font-size:16px; text-align:center; }
+.settings .bf-panel input:focus-visible,.settings .bf-panel button:focus-visible { outline:2px solid var(--theme-color); outline-offset:3px; }
+.settings .bf-panel .bf-slider { --bf-fill:0%; box-sizing:border-box; display:block; width:100%; height:44px; margin:2px 0 0; padding:0; border:0; border-radius:0; background:linear-gradient(to right,var(--theme-color) var(--bf-fill),rgba(128,128,128,.35) var(--bf-fill)) center / 100% 5px no-repeat; touch-action:pan-y; cursor:pointer; }
+.settings .bf-slider::-webkit-slider-thumb { width:22px; height:22px; border:3px solid var(--theme-color); background:var(--theme-color); border-radius:50%; }
+.settings .bf-slider::-moz-range-thumb { width:18px; height:18px; border:2px solid var(--theme-color); background:var(--theme-color); border-radius:50%; }
+.settings .bf-slider::-moz-range-track { background:transparent; border:0; }
+.settings .bf-limits { display:flex; justify-content:space-between; gap:8px; font-size:.72em; line-height:1.5; opacity:.75; }
+.settings .bf-limits span:nth-child(2) { text-align:center; }
+.settings .bf-footer { display:flex; justify-content:flex-end; margin-top:20px; }
+.settings .bf-footer button { min-height:44px; padding:8px 12px; border:1px solid rgba(128,128,128,.45); border-radius:8px; color:inherit; background:transparent; font:inherit; font-size:.85em; cursor:pointer; }
+.settings .bf-panel input:disabled,.settings .bf-panel button:disabled { opacity:.4; cursor:not-allowed; }
+@media(max-width:480px) { .settings .bf-panel { margin:16px 0; padding:14px 12px; } }
+
