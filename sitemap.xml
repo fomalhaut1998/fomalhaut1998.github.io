@@ -47,24 +47,6 @@
   </url>
   
   <url>
-    <loc>https://www.fomal.cc/site/census/index.html</loc>
-    
-    <lastmod>2026-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.fomal.cc/site/time/index.html</loc>
-    
-    <lastmod>2026-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.fomal.cc/social/fcircle/index.html</loc>
     
     <lastmod>2026-10-18</lastmod>
@@ -92,6 +74,15 @@
   </url>
   
   <url>
+    <loc>https://www.fomal.cc/personal/about/index.html</loc>
+    
+    <lastmod>2026-10-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.fomal.cc/life/music/index.html</loc>
     
     <lastmod>2026-10-18</lastmod>
@@ -101,7 +92,16 @@
   </url>
   
   <url>
-    <loc>https://www.fomal.cc/personal/about/index.html</loc>
+    <loc>https://www.fomal.cc/site/time/index.html</loc>
+    
+    <lastmod>2026-10-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fomal.cc/site/census/index.html</loc>
     
     <lastmod>2026-10-18</lastmod>
     
@@ -119,15 +119,6 @@
   </url>
   
   <url>
-    <loc>https://www.fomal.cc/box/gallery/photo/index.html</loc>
-    
-    <lastmod>2026-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.fomal.cc/box/gallery/wallpaper/index.html</loc>
     
     <lastmod>2026-10-18</lastmod>
@@ -137,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://www.fomal.cc/box/gallery/index.html</loc>
+    <loc>https://www.fomal.cc/box/gallery/photo/index.html</loc>
     
     <lastmod>2026-10-18</lastmod>
     
@@ -147,6 +138,15 @@
   
   <url>
     <loc>https://www.fomal.cc/box/astronomy/index.html</loc>
+    
+    <lastmod>2026-10-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fomal.cc/box/gallery/index.html</loc>
     
     <lastmod>2026-10-18</lastmod>
     
@@ -908,13 +908,6 @@
   </url>
   
   <url>
-    <loc>https://www.fomal.cc/tags/%E7%8A%B6%E6%80%81%E6%9C%BADP/</loc>
-    <lastmod>2026-10-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.fomal.cc/tags/%E5%9B%9E%E6%BA%AF/</loc>
     <lastmod>2026-10-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -923,6 +916,13 @@
   
   <url>
     <loc>https://www.fomal.cc/tags/%E9%80%92%E5%BD%92/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fomal.cc/tags/%E7%8A%B6%E6%80%81%E6%9C%BADP/</loc>
     <lastmod>2026-10-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

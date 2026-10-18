@@ -1017,3 +1017,8 @@ html[data-theme="dark"] #fps {
   .dm-stage .dm-glow { height: 22%; }
 }
 @media (prefers-reduced-motion: reduce) { .dm-stage { display: none !important; } }
+
+/* ⑲ 文章页版权下方的标签：flex 行里放不下时换行，不要被压成竖排空箱
+   （custom.css 只给了 display:flex，没有 flex-wrap；子项默认 shrink 后文字逐字换行） */
+#post .tag_share .post-meta__tag-list { display: flex; flex-wrap: wrap; align-items: flex-start; }
+#post .tag_share .post-meta__tag-list > .post-meta__tags { flex: 0 0 auto; width: auto; max-width: 100%; white-space: nowrap; }

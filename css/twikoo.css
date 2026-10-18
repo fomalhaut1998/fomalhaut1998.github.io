@@ -609,6 +609,73 @@
   .twikoo .tk-content {
     max-width: 100%;
   }
+  /* 0/500 原来钉在输入框右下角，会压在 placeholder 最后一行上；
+     改到输入框正下方左侧（绝对定位脱离流，不占输入框宽度），下面留出 22px 让位。 */
+  .twikoo .tk-textarea {
+    position: relative;
+    margin-bottom: 22px;
+  }
+  /* 手机端输入框行高从 2.1 收到 1.6（原规则选择器更具体，这里写全），
+     打出来的正文没那么散；框高度不变。 */
+  .twikoo .tk-submit .tk-textarea__inner,
+  .twikoo .tk-submit .tk-textarea .tk-input__inner {
+    line-height: 1.6;
+  }
+  /* 后台那条提示有两个自然段、十几行，按正文大小排会撑满并切在框底；
+     手机端当小号灰字提示处理，让它整段落在框里，不和正文抢视觉重心。 */
+  .twikoo .tk-submit .tk-textarea__inner::placeholder {
+    font-size: 0.78em;
+  }
+  .twikoo .tk-input__count {
+    position: absolute;
+    left: 2px;
+    right: auto;
+    bottom: -20px;
+    line-height: 1;
+    text-align: left;
+  }
+  /* 「N 条评论 + 最新/最早/热门 + 搜索/刷新」在手机端原来是一长条：
+     标题 18.4px 又粗又亮，排序按钮被 space-between 顶到右侧，两个图标贴着
+     视口右缘、半个身子压在悬浮工具条底下。
+     改成：标题与排序都收小、左边聚成一组，图标用 auto 外边距单独顶到最右；
+     整行右侧留 40px 让开悬浮工具条（只影响这一行文字，评论列表与表单仍满宽）。 */
+  .twikoo .tk-comments-title {
+    justify-content: flex-start;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0;
+    gap: 0.75rem;
+    padding-right: 40px;
+  }
+  .twikoo .tk-comments-count {
+    font-size: inherit;
+  }
+  .twikoo .tk-comments-actions {
+    flex: 1;
+    justify-content: flex-start;
+    font-size: 0.75rem;
+    gap: 0.25rem;
+  }
+  .twikoo .tk-comments-sort {
+    gap: 0.125rem;
+    margin-right: 0;
+  }
+  .twikoo .tk-comments-title .tk-sort-item {
+    padding: 3px 8px;
+    border-radius: 7px;
+  }
+  .twikoo .tk-comments-title .tk-comments-actions > .tk-icon {
+    margin-left: auto;
+  }
+  .twikoo .tk-comments-title .tk-comments-actions > .tk-icon + .tk-icon {
+    margin-left: 0.25rem;
+  }
+  .twikoo .tk-comments-title .tk-comments-actions .tk-icon,
+  .twikoo .tk-comments-title .tk-comments-actions .tk-icon svg {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 /* 窄输入带自动竖排（两列/一列场景）：容器查询，支持与否都不影响基础样式 */
