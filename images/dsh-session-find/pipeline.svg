@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="920" viewBox="0 0 1240 920" role="img">
+<rect x="0" y="0" width="1240" height="920" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
+<text x="56" y="60" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="25" fill="#0b1220" font-weight="700" text-anchor="start">一次搜索的五段路：store → 片段 → 匹配 → 合并 → 面板</text>
+<text x="56" y="90" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13.5" fill="#64748b" font-weight="400" text-anchor="start">左边是主链路，右边是每一步容易踩的细节</text>
+<rect x="56" y="120" width="700" height="74" rx="14" fill="#eef4ff" stroke="#c7dbff" stroke-width="1.4"/>
+<text x="76" y="148" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13" fill="#1d4ed8" font-weight="700" text-anchor="start">① 会话 store</text>
+<text x="76" y="176" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#334155" font-weight="400" text-anchor="start">order[] 逐条 nodeStore.get(key)</text>
+<rect x="56" y="224" width="700" height="74" rx="14" fill="#eef4ff" stroke="#c7dbff" stroke-width="1.4"/>
+<text x="76" y="252" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13" fill="#1d4ed8" font-weight="700" text-anchor="start">② 拆成片段 collectParts</text>
+<text x="76" y="280" font-family="'Cascadia Mono', 'Consolas', 'SFMono-Regular', monospace" font-size="12.5" fill="#334155" font-weight="400" text-anchor="start">{ text: string, role: 'user' | 'assistant' | ... }</text>
+<line x1="330" y1="194" x2="330" y2="216" stroke="#93b4f8" stroke-width="1.8" stroke-linecap="round"/><path d="M325 215 L330 224 L335 215Z" fill="#93b4f8"/>
+<rect x="56" y="328" width="340" height="96" rx="14" fill="#ffffff" stroke="#dbe4f3" stroke-width="1.4"/>
+<text x="76" y="356" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#0f766e" font-weight="700" text-anchor="start">prose 投影（默认）</text>
+<text x="76" y="382" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#334155" font-weight="400" text-anchor="start">只有你 + 助手</text>
+<text x="76" y="404" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="11.5" fill="#64748b" font-weight="400" text-anchor="start">干净，但可能漏工具里的词</text>
+<rect x="416" y="328" width="340" height="96" rx="14" fill="#ffffff" stroke="#dbe4f3" stroke-width="1.4"/>
+<text x="436" y="356" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#b45309" font-weight="700" text-anchor="start">full 投影（全量）</text>
+<text x="436" y="382" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#334155" font-weight="400" text-anchor="start">全部片段 + 卡片 JSON 的可读前缀</text>
+<text x="436" y="404" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="11.5" fill="#64748b" font-weight="400" text-anchor="start">脏一点，但不漏</text>
+<line x1="330" y1="298" x2="330" y2="314" stroke="#93b4f8" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="226" y1="314" x2="586" y2="314" stroke="#93b4f8" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="226" y1="314" x2="226" y2="320" stroke="#93b4f8" stroke-width="1.8" stroke-linecap="round"/><path d="M221 319 L226 328 L231 319Z" fill="#93b4f8"/>
+<line x1="586" y1="314" x2="586" y2="320" stroke="#93b4f8" stroke-width="1.8" stroke-linecap="round"/><path d="M581 319 L586 328 L591 319Z" fill="#93b4f8"/>
+<rect x="56" y="452" width="700" height="84" rx="14" fill="#eef4ff" stroke="#c7dbff" stroke-width="1.4"/>
+<text x="76" y="480" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13" fill="#1d4ed8" font-weight="700" text-anchor="start">③ buildMatcher：literal 或 regex</text>
+<text x="76" y="508" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#334155" font-weight="400" text-anchor="start">大小写 · 全词（仅纯 ASCII）· 正则零宽推进防死循环</text>
+<line x1="330" y1="424" x2="330" y2="444" stroke="#93b4f8" stroke-width="1.8" stroke-linecap="round"/><path d="M325 443 L330 452 L335 443Z" fill="#93b4f8"/>
+<rect x="56" y="564" width="700" height="78" rx="14" fill="#ffffff" stroke="#dbe4f3" stroke-width="1.4"/>
+<text x="76" y="592" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13" fill="#0b1220" font-weight="700" text-anchor="start">④ hits[] { at, len, match }</text>
+<text x="76" y="618" font-family="'Cascadia Mono', 'Consolas', 'SFMono-Regular', monospace" font-size="12.5" fill="#334155" font-weight="400" text-anchor="start">excluded = 全量命中数 − prose 命中数</text>
+<line x1="330" y1="536" x2="330" y2="556" stroke="#93b4f8" stroke-width="1.8" stroke-linecap="round"/><path d="M325 555 L330 564 L335 555Z" fill="#93b4f8"/>
+<rect x="56" y="670" width="700" height="78" rx="14" fill="#ffffff" stroke="#dbe4f3" stroke-width="1.4"/>
+<text x="76" y="698" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13" fill="#0b1220" font-weight="700" text-anchor="start">⑤ dedupeHits：同文合并</text>
+<text x="76" y="724" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#334155" font-weight="400" text-anchor="start">保留最靠前一条，并记住它「首次出现的轮次」</text>
+<line x1="330" y1="642" x2="330" y2="662" stroke="#93b4f8" stroke-width="1.8" stroke-linecap="round"/><path d="M325 661 L330 670 L335 661Z" fill="#93b4f8"/>
+<rect x="56" y="776" width="700" height="78" rx="14" fill="#0b1220" stroke="none" stroke-width="0"/>
+<text x="76" y="804" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13" fill="#dbe7ff" font-weight="700" text-anchor="start">⑥ 面板：轮次分组 / 来源筛选 / 「已排除 N 处」</text>
+<text x="76" y="830" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#8fa6c6" font-weight="400" text-anchor="start">高亮用 ::highlight，不改 DOM</text>
+<line x1="330" y1="748" x2="330" y2="768" stroke="#93b4f8" stroke-width="1.8" stroke-linecap="round"/><path d="M325 767 L330 776 L335 767Z" fill="#93b4f8"/>
+<rect x="796" y="120" width="392" height="108" rx="14" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.4"/>
+<text x="818" y="150" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#1e293b" font-weight="700" text-anchor="start">prose 搜两遍</text>
+<text x="818" y="178" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="11.5" fill="#475569" font-weight="400" text-anchor="start">一遍全量求总数，一遍正文求行号</text>
+<text x="818" y="202" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="11.5" fill="#475569" font-weight="400" text-anchor="start">差值是「已排除」—— 不是撒谎，是标注</text>
+<rect x="796" y="252" width="392" height="108" rx="14" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.4"/>
+<text x="818" y="282" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#1e293b" font-weight="700" text-anchor="start">全词只看 ASCII</text>
+<text x="818" y="310" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="11.5" fill="#475569" font-weight="400" text-anchor="start">中文没有词边界，开全词等于搜不到</text>
+<text x="818" y="334" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="11.5" fill="#475569" font-weight="400" text-anchor="start">所以边界只在查询是纯 ASCII 词时加</text>
+<rect x="796" y="384" width="392" height="108" rx="14" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.4"/>
+<text x="818" y="414" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#1e293b" font-weight="700" text-anchor="start">零宽匹配</text>
+<text x="818" y="442" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="11.5" fill="#475569" font-weight="400" text-anchor="start">res.lastIndex 前进一格</text>
+<text x="818" y="466" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="11.5" fill="#475569" font-weight="400" text-anchor="start">连 * 和 ^ 都不会卡死浏览器</text>
+<rect x="796" y="516" width="392" height="108" rx="14" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.4"/>
+<text x="818" y="546" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#1e293b" font-weight="700" text-anchor="start">高亮别碰 DOM</text>
+<text x="818" y="574" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="11.5" fill="#475569" font-weight="400" text-anchor="start">CSS Custom Highlight API</text>
+<text x="818" y="598" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="11.5" fill="#475569" font-weight="400" text-anchor="start">一次最多 240 个 range</text>
+<rect x="796" y="648" width="392" height="108" rx="14" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.4"/>
+<text x="818" y="678" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#1e293b" font-weight="700" text-anchor="start">跳转四步</text>
+<text x="818" y="706" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="11.5" fill="#475569" font-weight="400" text-anchor="start">展开回合 → 二分轮次 → 单向 scrollTop</text>
+<text x="818" y="730" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="11.5" fill="#475569" font-weight="400" text-anchor="start">→ 按文本兜底；找不到就标近似</text>
+<rect x="796" y="780" width="392" height="108" rx="14" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.4"/>
+<text x="818" y="810" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#1e293b" font-weight="700" text-anchor="start">上限与诚实</text>
+<text x="818" y="838" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="11.5" fill="#475569" font-weight="400" text-anchor="start">结果列表 300 条；只搜已加载历史</text>
+<text x="818" y="862" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="11.5" fill="#475569" font-weight="400" text-anchor="start">面板会直接告诉你还剩多少</text>
+</svg>

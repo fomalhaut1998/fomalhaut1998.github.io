@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="860" viewBox="0 0 1240 860" role="img">
+<rect x="0" y="0" width="1240" height="860" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
+<text x="56" y="62" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="26" fill="#0b1220" font-weight="700" text-anchor="start">dsh-image-hunt：从一句话到一张图</text>
+<text x="56" y="92" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13.5" fill="#64748b" font-weight="400" text-anchor="start">14 个图源并行搜 → 轮转合并去重 → 下载校验 → 落进会话工作区，图直接显示在对话里</text>
+<rect x="56" y="120" width="420" height="96" rx="16" fill="#eef4ff" stroke="#c7dbff" stroke-width="1.4"/>
+<text x="76" y="146" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#1d4ed8" font-weight="600" text-anchor="start">① 会话里一句话</text>
+<text x="76" y="176" font-family="'Cascadia Mono', 'Consolas', 'SFMono-Regular', monospace" font-size="14" fill="#1e3a8a" font-weight="400" text-anchor="start">“帮我找 4 张禾木冬景，要高清”</text>
+<text x="76" y="200" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="11.5" fill="#64748b" font-weight="400" text-anchor="start">不用记参数，说人话就行</text>
+<rect x="516" y="120" width="668" height="96" rx="16" fill="#eef4ff" stroke="#c7dbff" stroke-width="1.4"/>
+<text x="536" y="146" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#1d4ed8" font-weight="600" text-anchor="start">② 源注册表 SOURCES —— 21 个可填的 engine 名</text>
+<text x="536" y="176" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="14" fill="#1e3a8a" font-weight="600" text-anchor="start">14 个源 + 7 个别名</text>
+<text x="710" y="176" font-family="'Cascadia Mono', 'Consolas', 'SFMono-Regular', monospace" font-size="13" fill="#1e3a8a" font-weight="400" text-anchor="start">auto / all / both / intl / cc / anime / moe</text>
+<text x="536" y="200" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="11.5" fill="#64748b" font-weight="400" text-anchor="start">单个源 id、别名或 sources 数组，任选一种写法</text>
+<line x1="478" y1="168" x2="504" y2="168" stroke="#93b4f8" stroke-width="1.8"/><path d="M503 163 L512 168 L503 173Z" fill="#93b4f8"/>
+<line x1="852" y1="216" x2="852" y2="236" stroke="#93b4f8" stroke-width="1.8"/>
+<line x1="204" y1="236" x2="1002" y2="236" stroke="#93b4f8" stroke-width="1.8"/>
+<line x1="204" y1="236" x2="204" y2="242" stroke="#93b4f8" stroke-width="1.8"/><path d="M199 241 L204 250 L209 241Z" fill="#93b4f8"/>
+<line x1="614" y1="236" x2="614" y2="242" stroke="#93b4f8" stroke-width="1.8"/><path d="M609 241 L614 250 L619 241Z" fill="#93b4f8"/>
+<line x1="1002" y1="236" x2="1002" y2="242" stroke="#93b4f8" stroke-width="1.8"/><path d="M997 241 L1002 250 L1007 241Z" fill="#93b4f8"/>
+<rect x="56" y="250" width="356" height="104" rx="14" fill="#ffffff" stroke="#dbe4f3" stroke-width="1.4"/>
+<text x="76" y="276" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#0f766e" font-weight="700" text-anchor="start">国内 5 · 直连</text>
+<text x="76" y="306" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13" fill="#1e293b" font-weight="400" text-anchor="start">百度 / 必应 / 360</text>
+<text x="76" y="330" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13" fill="#475569" font-weight="400" text-anchor="start">堆糖 / 花瓣</text>
+<rect x="436" y="250" width="356" height="104" rx="14" fill="#ffffff" stroke="#dbe4f3" stroke-width="1.4"/>
+<text x="456" y="276" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#b45309" font-weight="700" text-anchor="start">国外 4 · 走代理</text>
+<text x="456" y="306" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13" fill="#1e293b" font-weight="400" text-anchor="start">DuckDuckGo / Yandex</text>
+<text x="456" y="330" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13" fill="#475569" font-weight="400" text-anchor="start">Openverse / Wikimedia</text>
+<rect x="816" y="250" width="368" height="104" rx="14" fill="#ffffff" stroke="#dbe4f3" stroke-width="1.4"/>
+<text x="836" y="276" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#6d28d9" font-weight="700" text-anchor="start">二次元 4 + 图标</text>
+<text x="836" y="306" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13" fill="#1e293b" font-weight="400" text-anchor="start">Pixiv / Wallhaven</text>
+<text x="836" y="330" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13" fill="#475569" font-weight="400" text-anchor="start">Konachan / Safebooru · Iconify</text>
+<line x1="204" y1="354" x2="204" y2="376" stroke="#93b4f8" stroke-width="1.8"/><path d="M199 375 L204 384 L209 375Z" fill="#93b4f8"/>
+<line x1="614" y1="354" x2="614" y2="376" stroke="#93b4f8" stroke-width="1.8"/><path d="M609 375 L614 384 L619 375Z" fill="#93b4f8"/>
+<line x1="1002" y1="354" x2="1002" y2="376" stroke="#93b4f8" stroke-width="1.8"/><path d="M997 375 L1002 384 L1007 375Z" fill="#93b4f8"/>
+<rect x="56" y="384" width="1128" height="92" rx="14" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.4"/>
+<text x="76" y="410" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#0b1220" font-weight="600" text-anchor="start">③ 并行抓取，互不阻塞</text>
+<text x="76" y="438" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13" fill="#334155" font-weight="400" text-anchor="start">Promise.all 并行；单源 20–35s 超时；一个源挂了只进 errors，不影响其它源</text>
+<text x="76" y="462" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13" fill="#334155" font-weight="400" text-anchor="start">结果按源轮转交错合并 → 去重（原图直链）→ minPixels 过滤 → 尺寸不合格的进 skipped</text>
+<line x1="620" y1="476" x2="620" y2="496" stroke="#93b4f8" stroke-width="1.8"/>
+<line x1="330" y1="496" x2="898" y2="496" stroke="#93b4f8" stroke-width="1.8"/>
+<line x1="330" y1="496" x2="330" y2="508" stroke="#93b4f8" stroke-width="1.8"/><path d="M325 507 L330 516 L335 507Z" fill="#93b4f8"/>
+<line x1="898" y1="496" x2="898" y2="508" stroke="#93b4f8" stroke-width="1.8"/><path d="M893 507 L898 516 L903 507Z" fill="#93b4f8"/>
+<rect x="56" y="516" width="548" height="124" rx="14" fill="#ffffff" stroke="#dbe4f3" stroke-width="1.4"/>
+<text x="76" y="542" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#0b1220" font-weight="700" text-anchor="start">④ 下载：只许落在工作区里</text>
+<text x="76" y="572" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13" fill="#334155" font-weight="400" text-anchor="start">MAX_BYTES = 40 MB，超了跳过</text>
+<text x="76" y="596" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13" fill="#334155" font-weight="400" text-anchor="start">safeJoin 收口到会话 cwd，越界直接抛错</text>
+<text x="76" y="620" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13" fill="#334155" font-weight="400" text-anchor="start">Referer 过防盗链（pixiv 必须带）</text>
+<rect x="612" y="516" width="572" height="124" rx="14" fill="#ffffff" stroke="#dbe4f3" stroke-width="1.4"/>
+<text x="632" y="542" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#0b1220" font-weight="700" text-anchor="start">⑤ 以文件为准，不信接口</text>
+<text x="632" y="572" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13" fill="#334155" font-weight="400" text-anchor="start">sniffExt：按字节头判格式（后缀常是假的）</text>
+<text x="632" y="596" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13" fill="#334155" font-weight="400" text-anchor="start">imgSize：读 jpeg/png/webp 头拿真实像素</text>
+<text x="632" y="620" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13" fill="#334155" font-weight="400" text-anchor="start">接口报的尺寸另存 metaWidth / metaHeight</text>
+<line x1="620" y1="640" x2="620" y2="668" stroke="#93b4f8" stroke-width="1.8"/><path d="M615 667 L620 676 L625 667Z" fill="#93b4f8"/>
+<rect x="56" y="676" width="1128" height="92" rx="14" fill="#eef4ff" stroke="#c7dbff" stroke-width="1.4"/>
+<text x="76" y="702" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#1d4ed8" font-weight="700" text-anchor="start">⑥ 落盘：路径即用</text>
+<text x="76" y="730" font-family="'Cascadia Mono', 'Consolas', 'SFMono-Regular', monospace" font-size="13" fill="#1e3a8a" font-weight="400" text-anchor="start">images/&lt;关键词&gt;/01.jpg …</text>
+<text x="360" y="730" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13" fill="#1e3a8a" font-weight="400" text-anchor="start">meta.json：直链 / 来源页 / 标题 / 来源站 / license / 真实尺寸</text>
+<text x="76" y="754" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#475569" font-weight="400" text-anchor="start">files[].path 始终是工作区相对路径，可直接喂给 read_image / HTML / present</text>
+<line x1="620" y1="768" x2="620" y2="782" stroke="#93b4f8" stroke-width="1.8"/><path d="M615 781 L620 790 L625 781Z" fill="#93b4f8"/>
+<rect x="56" y="792" width="1128" height="48" rx="24" fill="#0b1220" stroke="none" stroke-width="0"/>
+<text x="620" y="822" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13" fill="#e6eefc" font-weight="400" text-anchor="middle">attachment → 对话里直接出图；同一批文件还能再拿去写文章、做 PPT</text>
+</svg>

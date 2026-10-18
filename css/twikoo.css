@@ -148,6 +148,14 @@
   z-index: 4;
 }
 
+/* 楼中楼的回复框：每条 .tk-comment 自己带 z-index:1（自成一个层叠上下文），
+   回复框里的 OwO 面板（z-index:1000）就被关在这条评论内部 —— 排在后面的评论卡
+   同为 1 层、DOM 又更靠后，于是压到「颜文字 / Emoji / QQ…」那一行上面，表情类型点不动。
+   只在展开表情面板期间把这条评论临时提一层（关掉就回落），其他评论仍是 1。 */
+.twikoo .tk-comment:has(.OwO-open) {
+  z-index: 3;
+}
+
 /* 昵称 / 邮箱 / 网址：三个字段各自独立成框（原来拼成一条胶囊带，块与块之间分不清） */
 .twikoo .tk-submit .tk-meta-input {
   display: flex;

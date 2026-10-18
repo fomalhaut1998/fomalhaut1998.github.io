@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="640" viewBox="0 0 1160 640" role="img">
+<rect x="0" y="0" width="1160" height="640" rx="0" fill="#ffffff" stroke="none" stroke-width="0"/>
+<text x="56" y="62" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="26" fill="#0b1220" font-weight="700" text-anchor="start">同一个会话，两种看得见的东西</text>
+<text x="56" y="94" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13.5" fill="#64748b" font-weight="400" text-anchor="start">浏览器自带搜索只认渲染出来的字；插件读的是会话 store —— 折叠的、滚出去的、还没渲染的，都在里面</text>
+<rect x="56" y="124" width="500" height="404" rx="18" fill="#fef7f7" stroke="#f3d4d4" stroke-width="1.4"/>
+<text x="84" y="158" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="15" fill="#9f1239" font-weight="700" text-anchor="start">浏览器 Ctrl+F</text>
+<text x="84" y="182" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12" fill="#9f6b6b" font-weight="400" text-anchor="start">读 DOM：只有当前渲染出来的文本节点</text>
+<text x="84" y="226" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="15" fill="#b91c1c" font-weight="700" text-anchor="start">✗</text>
+<text x="112" y="226" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13.5" fill="#7f1d1d" font-weight="400" text-anchor="start">折叠的步骤：点开才渲染</text>
+<text x="84" y="266" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="15" fill="#b91c1c" font-weight="700" text-anchor="start">✗</text>
+<text x="112" y="266" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13.5" fill="#7f1d1d" font-weight="400" text-anchor="start">工具调用的参数与返回值</text>
+<text x="84" y="306" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="15" fill="#b91c1c" font-weight="700" text-anchor="start">✗</text>
+<text x="112" y="306" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13.5" fill="#7f1d1d" font-weight="400" text-anchor="start">思考内容</text>
+<text x="84" y="346" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="15" fill="#b91c1c" font-weight="700" text-anchor="start">✗</text>
+<text x="112" y="346" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13.5" fill="#7f1d1d" font-weight="400" text-anchor="start">虚拟列表滚出屏幕的部分</text>
+<text x="84" y="398" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="15" fill="#15803d" font-weight="700" text-anchor="start">✓</text>
+<text x="112" y="398" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13.5" fill="#3f6212" font-weight="400" text-anchor="start">正文里看得见的那些字</text>
+<line x1="84" y1="428" x2="528" y2="428" stroke="#f0cfcf" stroke-width="1.4" stroke-linecap="round"/>
+<text x="84" y="458" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#9f6b6b" font-weight="400" text-anchor="start">结果：长会话里“搜不到”成了日常</text>
+<text x="84" y="484" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12.5" fill="#9f6b6b" font-weight="400" text-anchor="start">—— 你以为它搜了整个对话，其实只搜了屏幕</text>
+<rect x="604" y="124" width="500" height="404" rx="18" fill="#f4f9ff" stroke="#cfe0f7" stroke-width="1.4"/>
+<text x="632" y="158" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="15" fill="#1d4ed8" font-weight="700" text-anchor="start">dsh-session-find</text>
+<text x="632" y="182" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="12" fill="#4b6b96" font-weight="400" text-anchor="start">读 store：order[] 里每条消息的原始文本</text>
+<text x="632" y="226" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="15" fill="#15803d" font-weight="700" text-anchor="start">✓</text>
+<text x="660" y="226" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13.5" fill="#1e3a5f" font-weight="400" text-anchor="start">你的消息与助手回复</text>
+<text x="632" y="266" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="15" fill="#15803d" font-weight="700" text-anchor="start">✓</text>
+<text x="660" y="266" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13.5" fill="#1e3a5f" font-weight="400" text-anchor="start">思考、工具参数、工具输出</text>
+<text x="632" y="306" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="15" fill="#15803d" font-weight="700" text-anchor="start">✓</text>
+<text x="660" y="306" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13.5" fill="#1e3a5f" font-weight="400" text-anchor="start">折叠步骤（先展开再定位）</text>
+<text x="632" y="346" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="15" fill="#15803d" font-weight="700" text-anchor="start">✓</text>
+<text x="660" y="346" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13.5" fill="#1e3a5f" font-weight="400" text-anchor="start">轮次与来源标签</text>
+<text x="632" y="386" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="15" fill="#15803d" font-weight="700" text-anchor="start">✓</text>
+<text x="660" y="386" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13.5" fill="#1e3a5f" font-weight="400" text-anchor="start">正则 / Aa / 全词</text>
+<text x="56" y="588" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13" fill="#64748b" font-weight="400" text-anchor="start">没有 IPC、没有后台索引、不发任何网络请求 —— 搜索全程在浏览器里跑完</text>
+<text x="56" y="614" font-family="'Segoe UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif" font-size="13" fill="#94a3b8" font-weight="400" text-anchor="start">数据源只有一个：当前会话的 conversation store</text>
+</svg>
