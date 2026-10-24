@@ -176,6 +176,17 @@ background: linear-gradient(135deg, color-mix(in srgb, var(--anno-accent) 88%, v
 .card-widget.card-announcement #welcome-info center { text-align: left; margin: 0 0 2px; font-size: 12px;
   letter-spacing: .5px; color: var(--anno-muted); font-weight: 700; }
 .card-widget.card-announcement #welcome-info span { color: var(--anno-strong) !important; font-weight: 800; }
+/* 「疑似代理出口」小标记：出口 IP 的国家和访客浏览器时区对不上时，跟在「海外」后面。
+   做成描边小胶囊，不用实心底，免得抢正文的注意力；title 里有真实归属和时区，鼠标悬停可看。 */
+/* 点卡片可以立刻重新定位（nav.js 里绑了点击重试），给个手型 + 悬停提示 */
+.card-widget.card-announcement #welcome-info { cursor: pointer; }
+.card-widget.card-announcement #welcome-info:hover { border-color: var(--anno-accent); }
+.card-widget.card-announcement #welcome-info .welcome-tag {
+  display: inline-block; margin: 0 1px 0 5px; padding: 0 6px; vertical-align: 1px;
+  font-style: normal; font-size: 11px; font-weight: 700; line-height: 1.55; letter-spacing: .2px;
+  color: var(--anno-muted); background: transparent; white-space: nowrap; cursor: help;
+  border: 1px dashed var(--anno-muted); border-radius: 999px; opacity: .9;
+}
 
 /* ── 3/12  #pcLightTheme  ← 原 _config.fomalhaut.yml:1306-1344 ── */
 /* 版权卡片 · 白天配色（2026-10-05）：原文那套粉-青-米渐变是主题作者写死的固定值，跟主题色无关； */
