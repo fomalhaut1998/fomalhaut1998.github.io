@@ -747,3 +747,110 @@
   color: #cff3ee;
   color: hsl(from var(--tk-accent) h s 86%);
 }
+
+/* ============================================================ 表情面板
+   图片类表情的「等宽格子」只在手机端生效，规则写在文件末尾的 @media 段里，
+   桌面端保持主题原样（themes/fomalhaut/.../_custom/custom.css 里按包名做的
+   max-width 分级）。
+   文字包（颜文字 / Emoji）见下面单独的 flex 段。
+   回滚：bak/20261025-owo-mobile/before2/twikoo.css */
+
+/* 文字类表情（颜文字 / Emoji）：Twikoo 的 .OwO-item 是 inline-block，
+   浏览器会把它塞进「本行剩余宽度」里，`(๑•̀ㅂ•́)و✧` 这种长颜文字于是被
+   从中间折成两行，一行几个全靠运气。改成 flex：格子按内容宽度占位、
+   不参与收缩，内部一律不换行；整包仍居中排，长短混排也成列。
+   注意这两类在 Twikoo 里是两个不同的 class：颜文字 = OwO-items-emoticon，
+   纯 Emoji = OwO-items-emoji，都要覆盖。 */
+#twikoo .OwO-items-emoticon.OwO-items-show,
+#twikoo .OwO-items-emoji.OwO-items-show {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  gap: 2px;
+  padding: 8px;
+}
+#twikoo .OwO-items-emoticon.OwO-items-show > .OwO-item,
+#twikoo .OwO-items-emoji.OwO-items-show > .OwO-item {
+  display: block;
+  flex: 0 0 auto;
+  width: auto;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 767px) {
+  /* 图片类表情：Twikoo 默认给的是「按百分比宽度 + 图片固定 3em」，
+     宽度还跟着 600/460/400/330 四个断点跳到 16%/20%/25%/33%，
+     一行放几个全看屏幕宽度，加上 5px 10px 内边距，格子忽大忽小、行末常剩半格，
+     就是「又小又乱」。这里改成等宽格子（grid + auto-fill）：格子尺寸只由
+     minmax 决定；图按格子铺满（object-fit: contain），480px 原图在 DPR 3 的
+     手机上正好 1:1，比原来 42px 糊成一团清楚得多。 */
+  #twikoo .OwO-items-image.OwO-items-show {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
+    gap: 6px;
+    padding: 10px;
+    align-content: flex-start;
+  }
+  /* 主题 custom.css 是用 max-width 百分比控制表情大小的
+     （.OwO .OwO-body .OwO-items-image .OwO-item{max-width:calc(9% - 10px)}，
+     Heybox / 贴吧 / bilibili 那几个包还带 !important）。放在网格里，这个
+     max-width 会按「格子宽度」去算百分比，算出来是负数被夹到 0，于是每个格子
+     只剩 padding、图 0×0 全看不见。这里显式放开，尺寸交给网格列宽。 */
+  #twikoo .OwO-items-image.OwO-items-show > .OwO-item {
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    aspect-ratio: 1 / 1;
+    box-sizing: border-box;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  #twikoo .OwO-items-image.OwO-items-show > .OwO-item img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain; /* 宽高比不是 1:1 的包（贴吧 / bilibili）也不变形、不撑破格子 */
+  }
+  /* 键盘 / 读屏用户的焦点提示：原来的 hover 只有背景色变化 */
+  #twikoo .OwO-items-image.OwO-items-show > .OwO-item:focus-visible {
+    outline: 2px solid var(--tk-accent, #39c5bb);
+    outline-offset: -2px;
+  }
+
+  /* 文字类表情：Emoji 默认 20px 在手机上又大又挤，收到 15px；
+     颜文字默认 12px 又偏小，放到 14px。内边距同步收紧。 */
+  #twikoo .OwO-items-emoji.OwO-items-show > .OwO-item {
+    font-size: 15px;
+    line-height: 1.7;
+    padding: 2px 6px;
+  }
+  #twikoo .OwO-items-emoticon.OwO-items-show > .OwO-item {
+    font-size: 14px;
+    line-height: 1.7;
+    padding: 2px 6px;
+  }
+
+  /* 栏目条：17 个表情包在手机上会折成 4~5 行，光标签就把面板撑得比屏幕还高，
+     表情本体反而被挤到屏幕外面。改成单行横向滑动，高度固定 30px。 */
+  #twikoo .OwO-bar .OwO-packages {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  #twikoo .OwO-bar .OwO-packages::-webkit-scrollbar {
+    display: none;
+  }
+  #twikoo .OwO-bar .OwO-packages li {
+    flex: 0 0 auto;
+    font-size: 13px;
+    padding: 0 9px;
+    white-space: nowrap;
+  }
+}
