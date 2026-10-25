@@ -1033,3 +1033,16 @@ html[data-theme="dark"] #fps {
    （custom.css 只给了 display:flex，没有 flex-wrap；子项默认 shrink 后文字逐字换行） */
 #post .tag_share .post-meta__tag-list { display: flex; flex-wrap: wrap; align-items: flex-start; }
 #post .tag_share .post-meta__tag-list > .post-meta__tags { flex: 0 0 auto; width: auto; max-width: 100%; white-space: nowrap; }
+
+/* ⑳ 首页卡片（multicard）窄屏下 meta 行高收紧 + 卡内兜底裁剪
+   卡片 .recent-post-info 固定 150px，标题 50% / meta 50% = 72.5px；
+   而 .article-meta-wrap 的行高是 2 倍字号 = 26px，3 行就要 78px。
+   卡片宽度 ≲ 400px 时（手机单列、双栏 573–1068、三栏 1069–1366），
+   日期 + 分类 + 标签会折成 3~4 行，第三行顶到 .recent-post-item 的圆角底边、
+   被 overflow:hidden 裁掉（手机上就是「文字被遮挡」）。
+   这里在 ≤1366px 把行高压到 22px（3 行 = 66px < 72.5px，实测距卡底还有 10px），
+   再用 max-height:66px 兜底：万一极窄卡片折成 4 行，也只在卡片内部干净截断，
+   不会再溢出到圆角外。字号、卡片高度（352px）都不动。 */
+@media screen and (max-width: 1366px) {
+  #recent-posts .article-meta-wrap { line-height: 22px; max-height: 66px; overflow: hidden; }
+}

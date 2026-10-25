@@ -1,0 +1,1 @@
+!function(){"use strict";function n(n,t){for(var e=n;e&&1===e.nodeType;e=e.parentNode)if(e.classList&&e.classList.contains(t))return e;return null}document.addEventListener("click",(function(t){var e=t.target;if(e&&1===e.nodeType){var s=n(e,"OwO-item");if(s){var i=n(s,"OwO");i&&(i.classList.contains("OwO-open")||i.classList.add("OwO-open"))}}}),!1)}();
